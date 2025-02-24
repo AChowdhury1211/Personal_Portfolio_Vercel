@@ -1,23 +1,31 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 type Theme = "dark" | "light";
 
-const ThemeContext = createContext<{
+type ThemeProviderProps = {
+  children: ReactNode;
+  defaultTheme?: Theme;
+};
+
+type ThemeProviderState = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-}>({
+};
+
+const initialState: ThemeProviderState = {
   theme: "dark",
   setTheme: () => null,
-});
+};
+
+const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+  defaultTheme = "dark",
+}: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("theme");
+      const stored = localStorage.getItem("theme") as Theme;
       if (stored === "light" || stored === "dark") {
         return stored;
       }
@@ -25,28 +33,32 @@ export function ThemeProvider({
         ? "dark"
         : "light";
     }
-    return "dark";
+    return defaultTheme;
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const value = {
+    theme,
+    setTheme: (theme: Theme) => {
+      setTheme(theme);
+    },
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeProviderContext.Provider value={value}>
       {children}
-    </ThemeContext.Provider>
+    </ThemeProviderContext.Provider>
   );
 }
 
 export const useTheme = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(ThemeProviderContext);
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider");
   }

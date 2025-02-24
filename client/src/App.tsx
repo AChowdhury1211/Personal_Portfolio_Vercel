@@ -20,9 +20,9 @@ function Router() {
   );
 }
 
-function App() {
+export default function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <QueryClientProvider client={queryClient}>
         <Router />
         <Toaster />
@@ -30,5 +30,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;
