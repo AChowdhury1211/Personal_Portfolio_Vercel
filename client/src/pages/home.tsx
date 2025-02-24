@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { ContactForm } from "@/components/contact-form";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const services = [
   {
@@ -20,6 +21,27 @@ const services = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Alex Johnson",
+    role: "CTO at TechCorp",
+    content: "An exceptional developer who delivered beyond our expectations. The solution provided was both elegant and scalable.",
+    avatar: "AJ"
+  },
+  {
+    name: "Sarah Williams",
+    role: "Startup Founder",
+    content: "Working with them was a game-changer for our startup. Their technical expertise and attention to detail are remarkable.",
+    avatar: "SW"
+  },
+  {
+    name: "Michael Chen",
+    role: "Product Manager",
+    content: "Excellent communication and project delivery. Would definitely recommend for any complex technical projects.",
+    avatar: "MC"
+  }
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-16 pb-16">
@@ -27,7 +49,6 @@ export default function Home() {
       <section
         className="relative h-[500px] flex items-center"
         style={{
-          // Replace this URL with your actual banner image
           backgroundImage: "url(your-banner-image.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -67,6 +88,29 @@ export default function Home() {
               <CardContent>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
                 <p className="text-2xl font-bold">{service.price}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((testimonial) => (
+            <Card key={testimonial.name} className="flex flex-col">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <Avatar>
+                    <AvatarFallback>{testimonial.avatar}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground italic">"{testimonial.content}"</p>
               </CardContent>
             </Card>
           ))}
