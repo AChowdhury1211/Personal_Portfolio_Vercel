@@ -55,28 +55,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
 
       <footer className="border-t py-8 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Connect With Me</h3>
-              <div className="flex gap-4">
-                <a href="#linkedin" className="text-muted-foreground hover:text-primary">LinkedIn</a>
-                <a href="#youtube" className="text-muted-foreground hover:text-primary">YouTube</a>
-                <a href="#twitter" className="text-muted-foreground hover:text-primary">Twitter</a>
-                <a href="#github" className="text-muted-foreground hover:text-primary">GitHub</a>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Hire Me</h3>
-              <div className="flex gap-4">
-                <a href="#upwork" className="text-muted-foreground hover:text-primary">Upwork</a>
-                <a href="#fiverr" className="text-muted-foreground hover:text-primary">Fiverr</a>
-                <Link href="/#contact">
-                  <a className="text-muted-foreground hover:text-primary">Contact Me</a>
-                </Link>
-              </div>
-            </div>
-          </div>
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
         </div>
       </footer>
     </div>

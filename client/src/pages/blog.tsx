@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ContactForm } from "@/components/contact-form";
 
 const posts = [
   {
@@ -19,7 +20,7 @@ export default function Blog() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Recent Content</h1>
-      
+
       <div className="grid md:grid-cols-2 gap-6">
         {posts.map((post) => (
           <Card key={post.title}>
@@ -44,6 +45,18 @@ export default function Blog() {
             allowFullScreen
           />
         </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="mt-16">
+        <Card>
+          <CardHeader>
+            <CardTitle>Get in Touch</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ContactForm />
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

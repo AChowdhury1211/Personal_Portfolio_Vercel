@@ -72,27 +72,18 @@ export default function Home() {
             <p className="text-xl text-gray-200 mb-6">
               AI Research Engineer | POC Development Specialist
             </p>
+            <div className="prose dark:prose-invert text-gray-300 mb-8">
+              <p className="text-lg">
+                Specialized in translating cutting-edge AI research into practical solutions, 
+                I help businesses leverage artificial intelligence through robust proof-of-concept 
+                implementations.
+              </p>
+            </div>
             <div className="flex gap-4">
               <Button variant="outline" onClick={scrollToContact}>Contact Me</Button>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="container mx-auto px-4">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="prose dark:prose-invert max-w-none">
-              <p className="text-lg leading-relaxed">
-                Specialized in translating cutting-edge AI research into practical solutions, 
-                I help businesses leverage artificial intelligence through robust proof-of-concept 
-                implementations. With a deep understanding of machine learning and software 
-                engineering, I bridge the gap between academic research and business applications.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
       </section>
 
       {/* About Me Section */}
@@ -149,6 +140,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hire Me Section */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Hire Me On</h2>
+        <div className="grid grid-cols-2 gap-8">
+          <a href="#upwork" className="flex flex-col items-center gap-4 group">
+            <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Upwork</span>
+          </a>
+          <a href="#fiverr" className="flex flex-col items-center gap-4 group">
+            <SiFiverr className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Fiverr</span>
+          </a>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
@@ -188,21 +194,6 @@ export default function Home() {
             <ContactForm />
           </CardContent>
         </Card>
-      </section>
-
-      {/* Hire Me Section */}
-      <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Hire Me On</h2>
-        <div className="grid grid-cols-2 gap-8">
-          <a href="#upwork" className="flex flex-col items-center gap-4 group">
-            <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">Upwork</span>
-          </a>
-          <a href="#fiverr" className="flex flex-col items-center gap-4 group">
-            <SiFiverr className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">Fiverr</span>
-          </a>
-        </div>
       </section>
 
       {/* Newsletter Section */}
