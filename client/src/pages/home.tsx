@@ -76,6 +76,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Code & Contributions Section */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-6">Code & Contributions</h2>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Open Source Projects</h3>
+                <p className="text-muted-foreground">
+                  Check out my contributions and open source projects on GitHub.
+                  I actively participate in the developer community and share my knowledge.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
+                <p className="text-muted-foreground">
+                  Expertise in modern web technologies, cloud architecture, and scalable solutions.
+                  View my repositories to see my coding style and project architecture.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Services Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6">Services</h2>
@@ -117,8 +142,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="container mx-auto px-4">
+      {/* Hire Me Section */}
+      <section className="container mx-auto px-4 bg-primary/5 py-12 rounded-lg">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
+          <p className="text-xl text-muted-foreground">
+            Let's turn your ideas into reality with professional development services
+          </p>
+        </div>
         <Card>
           <CardHeader>
             <CardTitle>Get in Touch</CardTitle>
@@ -137,6 +168,18 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <NewsletterForm />
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="container mx-auto px-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Get in Touch</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ContactForm />
           </CardContent>
         </Card>
       </section>
