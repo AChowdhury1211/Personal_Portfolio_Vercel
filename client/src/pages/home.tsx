@@ -3,7 +3,8 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { ContactForm } from "@/components/contact-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { SocialLinks } from "@/components/social-links";
+import { SiGithub, SiLinkedin, SiYoutube, SiUpwork, SiFiverr } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 
 const services = [
   {
@@ -78,38 +79,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Links Section */}
+      {/* Intro Section */}
       <section className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Connect With Me</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex gap-4">
-                <a href="#linkedin" className="text-muted-foreground hover:text-primary">LinkedIn</a>
-                <a href="#youtube" className="text-muted-foreground hover:text-primary">YouTube</a>
-                <a href="#twitter" className="text-muted-foreground hover:text-primary">Twitter</a>
-                <a href="#github" className="text-muted-foreground hover:text-primary">GitHub</a>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Hire Me</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex gap-4">
-                <a href="#upwork" className="text-muted-foreground hover:text-primary">Upwork</a>
-                <a href="#fiverr" className="text-muted-foreground hover:text-primary">Fiverr</a>
-                <Button variant="link" onClick={scrollToContact}>Contact Me</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="prose dark:prose-invert max-w-none">
+              <p className="text-lg leading-relaxed">
+                Specialized in translating cutting-edge AI research into practical solutions, 
+                I help businesses leverage artificial intelligence through robust proof-of-concept 
+                implementations. With a deep understanding of machine learning and software 
+                engineering, I bridge the gap between academic research and business applications.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
-      {/* About Section */}
+      {/* About Me Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <div className="prose dark:prose-invert max-w-none">
@@ -122,29 +108,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Code & Contributions Section */}
+      {/* Connect With Me Section */}
       <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">Code & Contributions</h2>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Open Source Projects</h3>
-                <p className="text-muted-foreground">
-                  Check out my contributions and open source projects on GitHub.
-                  I actively participate in the developer community and share my knowledge.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-                <p className="text-muted-foreground">
-                  Expertise in modern web technologies, cloud architecture, and scalable solutions.
-                  View my repositories to see my coding style and project architecture.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <a href="#linkedin" className="flex flex-col items-center gap-4 group">
+            <SiLinkedin className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">LinkedIn</span>
+          </a>
+          <a href="#youtube" className="flex flex-col items-center gap-4 group">
+            <SiYoutube className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">YouTube</span>
+          </a>
+          <a href="#twitter" className="flex flex-col items-center gap-4 group">
+            <FaXTwitter className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Twitter</span>
+          </a>
+          <a href="#github" className="flex flex-col items-center gap-4 group">
+            <SiGithub className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">GitHub</span>
+          </a>
+        </div>
       </section>
 
       {/* Services Section */}
@@ -188,7 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hire Me Section */}
+      {/* Ready to Work Together Section */}
       <section className="container mx-auto px-4 bg-primary/5 py-12 rounded-lg">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
@@ -204,6 +188,21 @@ export default function Home() {
             <ContactForm />
           </CardContent>
         </Card>
+      </section>
+
+      {/* Hire Me Section */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Hire Me On</h2>
+        <div className="grid grid-cols-2 gap-8">
+          <a href="#upwork" className="flex flex-col items-center gap-4 group">
+            <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Upwork</span>
+          </a>
+          <a href="#fiverr" className="flex flex-col items-center gap-4 group">
+            <SiFiverr className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Fiverr</span>
+          </a>
+        </div>
       </section>
 
       {/* Newsletter Section */}

@@ -1,5 +1,7 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Link } from "wouter";
+import { SiGithub, SiLinkedin, SiYoutube } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,12 +24,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/">
               <a className="hover:text-primary">Home</a>
             </Link>
+            <Link href="/services">
+              <a className="hover:text-primary">Services</a>
+            </Link>
             <Link href="/blog">
               <a className="hover:text-primary">Blog</a>
             </Link>
             <Link href="/#contact">
               <a className="hover:text-primary">Contact</a>
             </Link>
+            <div className="border-l pl-6 flex items-center gap-4">
+              <a href="#github" className="text-muted-foreground hover:text-primary">
+                <SiGithub className="w-5 h-5" />
+              </a>
+              <a href="#linkedin" className="text-muted-foreground hover:text-primary">
+                <SiLinkedin className="w-5 h-5" />
+              </a>
+              <a href="#youtube" className="text-muted-foreground hover:text-primary">
+                <SiYoutube className="w-5 h-5" />
+              </a>
+              <a href="#twitter" className="text-muted-foreground hover:text-primary">
+                <FaXTwitter className="w-5 h-5" />
+              </a>
+            </div>
             <ThemeToggle />
           </nav>
         </div>
@@ -39,7 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-semibold mb-4">Connect With Me</h3>
+              <h3 className="font-semibold text-lg mb-4">Connect With Me</h3>
               <div className="flex gap-4">
                 <a href="#linkedin" className="text-muted-foreground hover:text-primary">LinkedIn</a>
                 <a href="#youtube" className="text-muted-foreground hover:text-primary">YouTube</a>
@@ -48,7 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Hire Me</h3>
+              <h3 className="font-semibold text-lg mb-4">Hire Me</h3>
               <div className="flex gap-4">
                 <a href="#upwork" className="text-muted-foreground hover:text-primary">Upwork</a>
                 <a href="#fiverr" className="text-muted-foreground hover:text-primary">Fiverr</a>
