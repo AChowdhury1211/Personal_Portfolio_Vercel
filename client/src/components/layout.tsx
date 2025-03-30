@@ -6,16 +6,20 @@ import { FaXTwitter } from "react-icons/fa6";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="border-b relative z-10">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/">
               <a className="flex items-center gap-2">
-                <img 
-                  src="/images/aichronicles_logo.png" 
-                  alt="AIChronicles Logo" 
-                  className="h-16 w-auto"
-                />
+                {/* Only the top part of the logo is visible in the header */}
+                <div className="h-20 overflow-hidden">
+                  <img 
+                    src="/images/aichronicles_logo.png" 
+                    alt="AIChronicles Logo" 
+                    className="h-48 w-auto relative -top-4"
+                    id="header-logo"
+                  />
+                </div>
               </a>
             </Link>
           </div>
