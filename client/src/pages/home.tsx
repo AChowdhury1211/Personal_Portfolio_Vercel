@@ -82,19 +82,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[750px] flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
+          {/* Main Logo - positioned in the top left */}
+          <div className="absolute top-8 left-8 z-10 w-[300px]">
+            <img 
+              src="/images/aichronicles_logo.png" 
+              alt="AIChronicles Logo" 
+              className="w-full h-auto"
+            />
+          </div>
+          
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-3xl mx-auto">
-              {/* Main Logo - larger size in hero section */}
-              <div className="mb-8 flex justify-center">
-                <div className="w-full max-w-2xl bg-purple-900 p-10 rounded-lg shadow-2xl">
-                  <img 
-                    src="https://raw.githubusercontent.com/AlvinChiou/screenshots/master/AIC_Logo_Purple.png" 
-                    alt="AIChronicles Logo" 
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-              
+            <div className="max-w-3xl mx-auto">  
               <h1 className="text-5xl font-bold text-white mb-6">
                 Hello! I'm Anwesha Chowdhury
               </h1>
@@ -124,7 +122,7 @@ export default function Home() {
           <div className="w-full md:w-1/4">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <img 
-                src="https://raw.githubusercontent.com/AlvinChiou/screenshots/master/AC_Logo_Grey.png" 
+                src="/images/ac_logo.png" 
                 alt="AC Logo" 
                 className="w-full h-auto"
               />
