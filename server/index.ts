@@ -62,7 +62,7 @@ app.use((req, res, next) => {
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
+    // reusePort option is no longer needed in Node.js v22
   }, () => {
     log(`serving on port ${port}`);
   });
