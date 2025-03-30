@@ -1,0 +1,16 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="8" fill="#0f172a"/>
+  <circle cx="60" cy="60" r="30" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <circle cx="60" cy="60" r="20" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <circle cx="60" cy="60" r="10" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2"/>
+  <circle cx="40" cy="45" r="8" fill="#8b5cf6" opacity="0.8"/>
+  <circle cx="70" cy="40" r="5" fill="#2dd4bf" opacity="0.8"/>
+  <circle cx="80" cy="70" r="7" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="50" cy="75" r="6" fill="#fb7185" opacity="0.8"/>
+  <line x1="40" y1="45" x2="70" y2="40" stroke="#ffffff" stroke-width="1"/>
+  <line x1="70" y1="40" x2="80" y2="70" stroke="#ffffff" stroke-width="1"/>
+  <line x1="80" y1="70" x2="50" y2="75" stroke="#ffffff" stroke-width="1"/>
+  <line x1="50" y1="75" x2="40" y2="45" stroke="#ffffff" stroke-width="1"/>
+  <line x1="40" y1="45" x2="80" y2="70" stroke="#ffffff" stroke-width="1"/>
+  <line x1="70" y1="40" x2="50" y2="75" stroke="#ffffff" stroke-width="1"/>
+</svg>

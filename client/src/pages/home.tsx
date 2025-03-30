@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { BackgroundSlideshow } from "@/components/background-slideshow";
+import { useLocation } from "wouter";
 import {
   SiGithub,
   SiLinkedin,
@@ -63,12 +64,18 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const [_, setLocation] = useLocation();
+  
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+  
+  const handleServicesClick = () => {
+    setLocation("/services");
   };
 
   // Define the background images with absolute URLs
@@ -80,26 +87,29 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-8 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[750px] flex items-center">
+      <section className="relative h-screen flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">  
-              <h1 className="text-5xl font-bold text-white mb-6">
+              <h1 className="text-6xl font-bold text-white mb-6">
                 Hello! I'm Anwesha Chowdhury
               </h1>
-              <p className="text-2xl text-gray-200 mb-8">
+              <p className="text-3xl text-gray-200 mb-8">
                 AI Research Engineer | Open Source Contributor | MLOps Dev
               </p>
               <div className="mb-10 mx-auto max-w-2xl">
-                <p className="text-xl text-gray-300">
-                  I help companies productionizing AI research, while leveraging
+                <p className="text-2xl text-gray-300">
+                  I help companies productionize AI research, leveraging
                   the best MLOps practices and Cuda programming for high inference
                   speed and scalability.
                 </p>
               </div>
               <div className="flex justify-center gap-4">
-                <Button variant="outline" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6">
+                <Button variant="default" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6">
                   Contact Me
+                </Button>
+                <Button variant="outline" size="lg" onClick={handleServicesClick} className="text-lg px-8 py-6">
+                  View Services
                 </Button>
               </div>
             </div>
@@ -108,9 +118,9 @@ export default function Home() {
       </section>
       
       {/* About Me Section */}
-      <section className="container mx-auto px-4 mt-16">
+      <section className="container mx-auto px-4 mt-16 text-center">
         <div>
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
+          <h2 className="text-4xl font-bold mb-8">About Me</h2>
           <div className="prose dark:prose-invert max-w-none">
             <p>
               As an AI Research Engineer, I specialize in developing
@@ -124,8 +134,8 @@ export default function Home() {
       </section>
 
       {/* Connect With Me Section */}
-      <section className="container mx-auto px-4 mt-16">
-        <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <h2 className="text-4xl font-bold mb-8">Connect With Me</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <a
             href="#linkedin"
@@ -150,8 +160,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="container mx-auto px-4 mt-16">
-        <h2 className="text-3xl font-bold mb-8">Services</h2>
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <h2 className="text-4xl font-bold mb-8">Services</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service) => (
             <Card key={service.title}>
@@ -170,8 +180,8 @@ export default function Home() {
       </section>
 
       {/* Hire Me Section */}
-      <section className="container mx-auto px-4 mt-16">
-        <h2 className="text-3xl font-bold mb-8">Hire Me On</h2>
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <h2 className="text-4xl font-bold mb-8">Hire Me On</h2>
         <div className="grid grid-cols-2 gap-8">
           <a href="#upwork" className="flex flex-col items-center gap-4 group">
             <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -185,8 +195,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4 mt-16">
-        <h2 className="text-3xl font-bold mb-8">Client Testimonials</h2>
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <h2 className="text-4xl font-bold mb-8">Client Testimonials</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.name} className="flex flex-col">
@@ -231,10 +241,11 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="container mx-auto px-4 mt-16">
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <h2 className="text-4xl font-bold mb-8">Stay Updated</h2>
         <Card>
           <CardHeader>
-            <CardTitle>Stay Updated</CardTitle>
+            <CardTitle>Subscribe to Newsletter</CardTitle>
           </CardHeader>
           <CardContent>
             <NewsletterForm />

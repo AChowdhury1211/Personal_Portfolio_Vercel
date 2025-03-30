@@ -2,20 +2,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
-const projects = [
+const researchAreas = [
   {
-    title: "AI-Powered Analytics Platform",
-    description: "Developed a proof-of-concept for real-time data analytics using advanced AI algorithms.",
-    image: "project1.jpg",
-    video: "https://www.youtube.com/embed/your-video-id",
+    title: "Multimodal Large Language Models",
+    description: "Research on models that can understand and generate content across text, images, audio, and video for more natural human-computer interactions.",
+    image: "/images/research-multimodal.svg"
   },
   {
-    title: "Machine Learning Pipeline",
-    description: "Built an end-to-end ML pipeline for automated data processing and model training.",
-    image: "project2.jpg",
-    video: "https://www.youtube.com/embed/your-video-id",
+    title: "Reinforcement Learning from Human Feedback",
+    description: "Advanced techniques to improve AI alignment with human preferences and values through interactive feedback mechanisms.",
+    image: "/images/research-rlhf.svg"
   },
-  // Add more projects here
+  {
+    title: "Efficient AI Deployment",
+    description: "Methods for optimizing model serving, reducing computational requirements, and enabling edge deployment of complex AI models.",
+    image: "/images/research-efficiency.svg"
+  },
+  {
+    title: "AI for Scientific Discovery",
+    description: "Using AI systems to accelerate discoveries in drug development, materials science, and fundamental physics.",
+    image: "/images/research-science.svg"
+  }
 ];
 
 const services = [
@@ -70,9 +77,34 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Trending Research Areas */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-8 text-center">Trending Research Areas</h2>
+        <div className="grid md:grid-cols-2 gap-12">
+          {researchAreas.map((area) => (
+            <Card key={area.title} className="flex flex-col md:flex-row overflow-hidden">
+              <div className="w-full md:w-1/3 flex items-center justify-center p-6 bg-primary/5">
+                <img 
+                  src={area.image} 
+                  alt={area.title} 
+                  className="w-24 h-24"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/placeholder-gif.svg';
+                  }}
+                />
+              </div>
+              <div className="w-full md:w-2/3 p-6">
+                <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
+                <p className="text-muted-foreground">{area.description}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">What I Offer</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center">What I Offer</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service) => (
             <Card key={service.title}>
@@ -97,21 +129,22 @@ export default function Services() {
 
       {/* Projects Showcase */}
       <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <Card key={project.title}>
+        <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <Card key={num}>
               <CardContent className="pt-6">
-                <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden">
-                  <iframe
-                    className="w-full h-full"
-                    src={project.video}
-                    title={project.title}
-                    allowFullScreen
+                <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={`/images/project-gif-${num}.gif`} 
+                    alt={`Project ${num}`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/placeholder-gif.svg';
+                    }}
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground">{project.description}</p>
+                <p className="text-center">Project {num} Demo</p>
               </CardContent>
             </Card>
           ))}
@@ -120,19 +153,32 @@ export default function Services() {
 
       {/* Contact CTA */}
       <section className="container mx-auto px-4">
-        <Card className="bg-primary/5">
-          <CardContent className="py-12">
+        <div className="relative rounded-lg overflow-hidden">
+          {/* Background image container */}
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center z-0" 
+            style={{ 
+              backgroundImage: "url('/images/bg-image1.jpg')", 
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          ></div>
+          
+          {/* Content */}
+          <div className="relative z-20 py-16 px-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <h2 className="text-4xl font-bold mb-4 text-white">Ready to Start Your AI Journey?</h2>
+              <p className="text-xl text-gray-200 mb-8">
                 Let's discuss how we can transform your ideas into reality
               </p>
-              <Button size="lg" onClick={handleContactClick}>
+              <Button size="lg" onClick={handleContactClick} className="text-lg px-8 py-6">
                 Contact Me
               </Button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </section>
     </div>
   );
