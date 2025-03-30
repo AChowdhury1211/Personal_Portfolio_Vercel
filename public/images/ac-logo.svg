@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c0c0c0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- A letter -->
+  <path d="M150,230 L210,80 L215,80 L275,230 L255,230 L240,190 L185,190 L170,230 Z M190,175 L235,175 L213,110 Z" fill="url(#silverGradient)" />
+  
+  <!-- C letter -->
+  <path d="M330,230 C310,230 295,225 285,215 C275,205 270,190 270,170 C270,150 275,135 285,125 C295,115 310,110 330,110 C340,110 350,112 360,116 C370,120 378,125 385,132 L370,147 C365,142 360,138 353,135 C346,132 339,130 330,130 C317,130 307,134 300,141 C293,148 290,158 290,170 C290,182 293,192 300,199 C307,206 317,210 330,210 C339,210 346,208 353,205 C360,202 365,198 370,193 L385,208 C378,215 370,220 360,224 C350,228 340,230 330,230 Z" fill="url(#silverGradient)" />
+  
+  <!-- Connecting line from A to C -->
+  <path d="M225,160 C240,155 255,155 270,160" fill="none" stroke="url(#silverGradient)" stroke-width="2" />
+</svg>
