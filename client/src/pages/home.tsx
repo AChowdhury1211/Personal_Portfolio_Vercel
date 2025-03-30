@@ -78,27 +78,27 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-1 pb-16">
+    <div className="flex flex-col gap-8 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center">
+      <section className="relative h-[650px] flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-5xl font-bold text-white mb-4">
+              <h1 className="text-6xl font-bold text-white mb-6">
                 Hello! I'm Anwesha Chowdhury
               </h1>
-              <p className="text-xl text-gray-200 mb-6">
+              <p className="text-2xl text-gray-200 mb-8">
                 AI Research Engineer | Open Source Contributor | MLOps Dev
               </p>
-              <div className="mb-8 mx-auto max-w-2xl">
-                <p className="text-lg text-gray-300">
+              <div className="mb-10 mx-auto max-w-2xl">
+                <p className="text-xl text-gray-300">
                   I help companies productionizing AI research, while leveraging
                   the best MLOps practices and Cuda programming for high inference
                   speed and scalability.
                 </p>
               </div>
               <div className="flex justify-center gap-4">
-                <Button variant="outline" onClick={scrollToContact}>
+                <Button variant="outline" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6">
                   Contact Me
                 </Button>
               </div>
@@ -106,9 +106,10 @@ export default function Home() {
           </div>
         </BackgroundSlideshow>
       </section>
+      
       {/* About Me Section */}
-      <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
+      <section className="container mx-auto px-4 mt-16">
+        <h2 className="text-3xl font-bold mb-8">About Me</h2>
         <div className="prose dark:prose-invert max-w-none">
           <p>
             As an AI Research Engineer, I specialize in developing
@@ -121,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* Connect With Me Section */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 mt-16">
         <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <a
@@ -147,8 +148,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">Services</h2>
+      <section className="container mx-auto px-4 mt-16">
+        <h2 className="text-3xl font-bold mb-8">Services</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((service) => (
             <Card key={service.title}>
@@ -167,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* Hire Me Section */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 mt-16">
         <h2 className="text-3xl font-bold mb-8">Hire Me On</h2>
         <div className="grid grid-cols-2 gap-8">
           <a href="#upwork" className="flex flex-col items-center gap-4 group">
@@ -182,8 +183,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">Client Testimonials</h2>
+      <section className="container mx-auto px-4 mt-16">
+        <h2 className="text-3xl font-bold mb-8">Client Testimonials</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.name} className="flex flex-col">
@@ -209,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Ready to Work Together Section */}
-      <section className="container mx-auto px-4 bg-primary/5 py-12 rounded-lg">
+      <section className="container mx-auto px-4 bg-primary/5 py-12 rounded-lg mt-16">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
           <p className="text-xl text-muted-foreground">
@@ -228,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4 mt-16">
         <Card>
           <CardHeader>
             <CardTitle>Stay Updated</CardTitle>
