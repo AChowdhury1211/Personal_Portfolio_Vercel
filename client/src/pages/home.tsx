@@ -82,24 +82,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[750px] flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
-          {/* Logo extension - continuation of the header logo */}
-          <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none">
-            <div className="container mx-auto px-4">
-              <div className="relative">
-                <div className="absolute left-[0.5rem] top-[17.5px] overflow-visible">
-                  <img 
-                    src="/images/aichronicles_logo.png" 
-                    alt="AIChronicles Logo Extended" 
-                    className="h-48 w-auto" 
-                    id="hero-logo-extension"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-3xl mx-auto pt-24">  
+            <div className="max-w-3xl mx-auto">  
               <h1 className="text-5xl font-bold text-white mb-6">
                 Hello! I'm Anwesha Chowdhury
               </h1>
