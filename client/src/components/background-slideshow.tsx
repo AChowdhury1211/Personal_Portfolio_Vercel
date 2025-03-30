@@ -22,6 +22,9 @@ export function BackgroundSlideshow({
     if (images.length <= 1) return;
 
     const fadeOutDuration = 1000; // 1 second for the fade out effect
+    
+    // Log images for debugging
+    console.log("Background images:", images);
 
     const intervalId = setInterval(() => {
       // Start fade out
@@ -45,14 +48,18 @@ export function BackgroundSlideshow({
         <div
           key={image}
           className={cn(
-            "absolute inset-0 bg-cover bg-center transition-opacity duration-1000",
+            "absolute inset-0 transition-opacity duration-1000",
             index === currentIndex 
               ? fadeIn 
                 ? "opacity-100" 
                 : "opacity-0" 
               : "opacity-0"
           )}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ 
+            backgroundImage: `url(${image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
           aria-hidden={index !== currentIndex}
         />
       ))}

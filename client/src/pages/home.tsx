@@ -71,10 +71,10 @@ export default function Home() {
     }
   };
 
-  // Define the background images
+  // Define the background images with absolute URLs
   const backgroundImages = [
-    "/images/bg-image1.jpg",
-    "/images/bg-image2.jpg",
+    "./images/bg-image1.jpg",
+    "./images/bg-image2.jpg",
   ];
 
   return (
@@ -90,8 +90,8 @@ export default function Home() {
               <p className="text-xl text-gray-200 mb-6">
                 AI Research Engineer | Open Source Contributor | MLOps Dev
               </p>
-              <div className="prose dark:prose-invert text-gray-300 mb-8">
-                <p className="text-lg">
+              <div className="mb-8 mx-auto max-w-2xl">
+                <p className="text-lg text-gray-300">
                   I help companies productionizing AI research, while leveraging
                   the best MLOps practices and Cuda programming for high inference
                   speed and scalability.
