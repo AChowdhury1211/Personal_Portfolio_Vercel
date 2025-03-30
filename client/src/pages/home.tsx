@@ -80,11 +80,22 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-8 pb-16">
       {/* Hero Section */}
-      <section className="relative h-[650px] flex items-center">
+      <section className="relative h-[750px] flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-6xl font-bold text-white mb-6">
+              {/* Main Logo - larger size in hero section */}
+              <div className="mb-8 flex justify-center">
+                <div className="w-full max-w-2xl bg-purple-900 p-10 rounded-lg shadow-2xl">
+                  <img 
+                    src="https://raw.githubusercontent.com/AlvinChiou/screenshots/master/AIC_Logo_Purple.png" 
+                    alt="AIChronicles Logo" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              
+              <h1 className="text-5xl font-bold text-white mb-6">
                 Hello! I'm Anwesha Chowdhury
               </h1>
               <p className="text-2xl text-gray-200 mb-8">
@@ -109,15 +120,28 @@ export default function Home() {
       
       {/* About Me Section */}
       <section className="container mx-auto px-4 mt-16">
-        <h2 className="text-3xl font-bold mb-8">About Me</h2>
-        <div className="prose dark:prose-invert max-w-none">
-          <p>
-            As an AI Research Engineer, I specialize in developing
-            proof-of-concept solutions that demonstrate the practical
-            applications of cutting-edge AI technologies. My expertise lies in
-            translating complex AI research into scalable, business-ready
-            solutions.
-          </p>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="w-full md:w-1/4">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+              <img 
+                src="https://raw.githubusercontent.com/AlvinChiou/screenshots/master/AC_Logo_Grey.png" 
+                alt="AC Logo" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-3/4">
+            <h2 className="text-3xl font-bold mb-8">About Me</h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>
+                As an AI Research Engineer, I specialize in developing
+                proof-of-concept solutions that demonstrate the practical
+                applications of cutting-edge AI technologies. My expertise lies in
+                translating complex AI research into scalable, business-ready
+                solutions.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

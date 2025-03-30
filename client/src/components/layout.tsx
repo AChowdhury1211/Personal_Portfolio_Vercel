@@ -11,10 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-2">
             <Link href="/">
               <a className="flex items-center gap-2">
-                {/* Main logo */}
-                <div className="h-14 w-44 flex items-center justify-center">
-                  <img src="/images/logo.svg" alt="AIChronicles Logo" className="h-full" />
-                </div>
+                <span className="font-semibold text-xl">AIChronicles</span>
               </a>
             </Link>
           </div>
@@ -55,9 +52,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t py-8 mt-16">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <div className="flex justify-center mb-4">
-            <img src="/images/ac-logo.svg" alt="AC Logo" className="h-10" />
-          </div>
           <p>&copy; {new Date().getFullYear()} AIChronicles. All rights reserved.</p>
         </div>
       </footer>

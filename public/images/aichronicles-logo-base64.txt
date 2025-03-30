@@ -1,0 +1,1 @@
+data:image/png;base64,THIS_WOULD_BE_BASE64_ENCODED_DATA
