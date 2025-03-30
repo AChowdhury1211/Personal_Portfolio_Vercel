@@ -11,7 +11,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-2">
             <Link href="/">
               <a className="flex items-center gap-2">
-                <span className="font-semibold text-xl">AIChronicles</span>
+                <img 
+                  src="/images/aichronicles_logo.png" 
+                  alt="AIChronicles Logo" 
+                  className="h-16 w-auto"
+                />
               </a>
             </Link>
           </div>

@@ -82,14 +82,6 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[750px] flex items-center">
         <BackgroundSlideshow images={backgroundImages} interval={10000}>
-          {/* Main Logo - positioned in the top left */}
-          <div className="absolute top-8 left-8 z-10 w-[300px]">
-            <img 
-              src="/images/aichronicles_logo.png" 
-              alt="AIChronicles Logo" 
-              className="w-full h-auto"
-            />
-          </div>
           
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">  
@@ -118,27 +110,16 @@ export default function Home() {
       
       {/* About Me Section */}
       <section className="container mx-auto px-4 mt-16">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-1/4">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <img 
-                src="/images/ac_logo.png" 
-                alt="AC Logo" 
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-          <div className="w-full md:w-3/4">
-            <h2 className="text-3xl font-bold mb-8">About Me</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                As an AI Research Engineer, I specialize in developing
-                proof-of-concept solutions that demonstrate the practical
-                applications of cutting-edge AI technologies. My expertise lies in
-                translating complex AI research into scalable, business-ready
-                solutions.
-              </p>
-            </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-8">About Me</h2>
+          <div className="prose dark:prose-invert max-w-none">
+            <p>
+              As an AI Research Engineer, I specialize in developing
+              proof-of-concept solutions that demonstrate the practical
+              applications of cutting-edge AI technologies. My expertise lies in
+              translating complex AI research into scalable, business-ready
+              solutions.
+            </p>
           </div>
         </div>
       </section>
