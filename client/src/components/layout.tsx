@@ -16,7 +16,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <img 
                     src="/images/aichronicles_logo.png" 
                     alt="AIChronicles Logo" 
-                    className="h-48 w-auto relative -top-4"
+                    className="h-48 w-auto relative -top-2"
                     id="header-logo"
                   />
                 </div>

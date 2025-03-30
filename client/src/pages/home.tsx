@@ -86,7 +86,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none">
             <div className="container mx-auto px-4">
               <div className="relative">
-                <div className="absolute left-[0.5rem] top-0 overflow-visible">
+                <div className="absolute left-[0.5rem] top-[17.5px] overflow-visible">
                   <img 
                     src="/images/aichronicles_logo.png" 
                     alt="AIChronicles Logo Extended" 
