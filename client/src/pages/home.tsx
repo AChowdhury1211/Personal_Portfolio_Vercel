@@ -3,7 +3,13 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { ContactForm } from "@/components/contact-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { SiGithub, SiLinkedin, SiYoutube, SiUpwork, SiFiverr } from "react-icons/si";
+import {
+  SiGithub,
+  SiLinkedin,
+  SiYoutube,
+  SiUpwork,
+  SiFiverr,
+} from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 
 const services = [
@@ -28,34 +34,44 @@ const testimonials = [
   {
     name: "Alex Johnson",
     role: "CTO at TechCorp",
-    content: "Exceptional AI expertise and delivered a robust POC that exceeded our expectations.",
-    avatar: "AJ"
+    content:
+      "Exceptional AI expertise and delivered a robust POC that exceeded our expectations.",
+    avatar: "AJ",
   },
   {
     name: "Sarah Williams",
     role: "Startup Founder",
-    content: "Their AI research background brought invaluable insights to our project.",
-    avatar: "SW"
+    content:
+      "Their AI research background brought invaluable insights to our project.",
+    avatar: "SW",
   },
   {
     name: "Michael Chen",
     role: "Product Manager",
-    content: "Delivered an innovative AI solution that transformed our business processes.",
-    avatar: "MC"
-  }
+    content:
+      "Delivered an innovative AI solution that transformed our business processes.",
+    avatar: "MC",
+  },
+  {
+    name: "Michael Chen",
+    role: "Product Manager",
+    content:
+      "Delivered an innovative AI solution that transformed our business processes.",
+    avatar: "MC",
+  },
 ];
 
 export default function Home() {
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
+    const element = document.getElementById("contact");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <div className="flex flex-col gap-16 pb-16">
+    <div className="flex flex-col gap-1 pb-16">
       {/* Hero Section */}
       <section
         className="relative h-[500px] flex items-center"
@@ -68,33 +84,37 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold text-white mb-4">Your Name</h1>
+            <h1 className="text-5xl font-bold text-white mb-4 whitespace-nowrap">
+              Hello! I'm Anwesha Chowdhury
+            </h1>
             <p className="text-xl text-gray-200 mb-6">
-              AI Research Engineer | POC Development Specialist
+              AI Research Engineer | Open Source Contributor | MLOps Dev
             </p>
             <div className="prose dark:prose-invert text-gray-300 mb-8">
               <p className="text-lg">
-                Specialized in translating cutting-edge AI research into practical solutions, 
-                I help businesses leverage artificial intelligence through robust proof-of-concept 
-                implementations.
+                I help companies productionizing AI research, while leveraging
+                the best MLOps practices and Cuda programming for high inference
+                speed and scalability.
               </p>
             </div>
             <div className="flex gap-4">
-              <Button variant="outline" onClick={scrollToContact}>Contact Me</Button>
+              <Button variant="outline" onClick={scrollToContact}>
+                Contact Me
+              </Button>
             </div>
           </div>
         </div>
       </section>
-
       {/* About Me Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <div className="prose dark:prose-invert max-w-none">
           <p>
-            As an AI Research Engineer, I specialize in developing proof-of-concept solutions 
-            that demonstrate the practical applications of cutting-edge AI technologies. 
-            My expertise lies in translating complex AI research into scalable, 
-            business-ready solutions.
+            As an AI Research Engineer, I specialize in developing
+            proof-of-concept solutions that demonstrate the practical
+            applications of cutting-edge AI technologies. My expertise lies in
+            translating complex AI research into scalable, business-ready
+            solutions.
           </p>
         </div>
       </section>
@@ -103,7 +123,10 @@ export default function Home() {
       <section className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8">Connect With Me</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <a href="#linkedin" className="flex flex-col items-center gap-4 group">
+          <a
+            href="#linkedin"
+            className="flex flex-col items-center gap-4 group"
+          >
             <SiLinkedin className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">LinkedIn</span>
           </a>
@@ -132,7 +155,9 @@ export default function Home() {
                 <CardTitle>{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <p className="text-muted-foreground mb-4">
+                  {service.description}
+                </p>
                 <p className="text-2xl font-bold">{service.price}</p>
               </CardContent>
             </Card>
@@ -168,10 +193,14 @@ export default function Home() {
                   </Avatar>
                   <div>
                     <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
-                <p className="text-muted-foreground italic">"{testimonial.content}"</p>
+                <p className="text-muted-foreground italic">
+                  "{testimonial.content}"
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -183,7 +212,8 @@ export default function Home() {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
           <p className="text-xl text-muted-foreground">
-            Let's develop innovative AI solutions that drive your business forward
+            Let's develop innovative AI solutions that drive your business
+            forward
           </p>
         </div>
         <Card id="contact">
