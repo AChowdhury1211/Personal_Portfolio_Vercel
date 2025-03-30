@@ -3,6 +3,7 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { ContactForm } from "@/components/contact-form";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { BackgroundSlideshow } from "@/components/background-slideshow";
 import {
   SiGithub,
   SiLinkedin,
@@ -70,40 +71,40 @@ export default function Home() {
     }
   };
 
+  // Define the background images
+  const backgroundImages = [
+    "/images/bg-image1.jpg",
+    "/images/bg-image2.jpg",
+  ];
+
   return (
     <div className="flex flex-col gap-1 pb-16">
       {/* Hero Section */}
-      <section
-        className="relative h-[500px] flex items-center"
-        style={{
-          backgroundImage: "url(your-banner-image.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold text-white mb-4 whitespace-nowrap">
-              Hello! I'm Anwesha Chowdhury
-            </h1>
-            <p className="text-xl text-gray-200 mb-6">
-              AI Research Engineer | Open Source Contributor | MLOps Dev
-            </p>
-            <div className="prose dark:prose-invert text-gray-300 mb-8">
-              <p className="text-lg">
-                I help companies productionizing AI research, while leveraging
-                the best MLOps practices and Cuda programming for high inference
-                speed and scalability.
+      <section className="relative h-[500px] flex items-center">
+        <BackgroundSlideshow images={backgroundImages} interval={10000}>
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h1 className="text-5xl font-bold text-white mb-4">
+                Hello! I'm Anwesha Chowdhury
+              </h1>
+              <p className="text-xl text-gray-200 mb-6">
+                AI Research Engineer | Open Source Contributor | MLOps Dev
               </p>
-            </div>
-            <div className="flex gap-4">
-              <Button variant="outline" onClick={scrollToContact}>
-                Contact Me
-              </Button>
+              <div className="prose dark:prose-invert text-gray-300 mb-8">
+                <p className="text-lg">
+                  I help companies productionizing AI research, while leveraging
+                  the best MLOps practices and Cuda programming for high inference
+                  speed and scalability.
+                </p>
+              </div>
+              <div className="flex justify-center gap-4">
+                <Button variant="outline" onClick={scrollToContact}>
+                  Contact Me
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </BackgroundSlideshow>
       </section>
       {/* About Me Section */}
       <section className="container mx-auto px-4">
