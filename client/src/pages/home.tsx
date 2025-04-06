@@ -33,26 +33,12 @@ const services = [
 
 const testimonials = [
   {
-    name: "Alex Johnson",
-    role: "CTO at TechCorp",
+    name: "Gaurav Dhamijia",
+    role: "Principal Solutions Architect at AWS",
     content:
-      "Exceptional AI expertise and delivered a robust POC that exceeded our expectations.",
-    avatar: "AJ",
-  },
-  {
-    name: "Sarah Williams",
-    role: "Startup Founder",
-    content:
-      "Their AI research background brought invaluable insights to our project.",
-    avatar: "SW",
-  },
-  {
-    name: "Michael Chen",
-    role: "Product Manager",
-    content:
-      "Delivered an innovative AI solution that transformed our business processes.",
-    avatar: "MC",
-  },
+      "Anwesha demonstrated strong expertise in AI/ML and Generative AI domains, delivering high-quality work on POCs involving AWS Generative AI services especially Amazon Bedrock. Her communication was clear and timely, ensuring alignment throughout the project. I would strongly recommend her for similar projects.",
+    avatar: "GD",
+  }
 ];
 
 export default function Home() {

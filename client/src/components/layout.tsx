@@ -21,6 +21,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <a href="#contact" className="hover:text-primary" onClick={(e) => {
               e.preventDefault();
               
+              const currentPath = window.location.pathname;
+              
+              // If not on home page, go to home page first and set up to scroll to contact section
+              if (currentPath !== "/" && currentPath !== "") {
+                sessionStorage.setItem('scrollToContact', 'true');
+                window.location.href = "/";
+                return;
+              }
+              
+              // For home page, scroll to the contact section
               // Find the section that contains the contact form (Ready to Work Together section)
               const workTogetherSection = document.querySelector('.bg-primary\\/5');
               const contactSection = document.getElementById("contact");
@@ -31,11 +41,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               } else if (contactSection) {
                 // Fallback to contact form if the section can't be found
                 contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-              } else {
-                // If not on home page, go to home page first then set up a function
-                // to scroll to the contact section after the page loads
-                sessionStorage.setItem('scrollToContact', 'true');
-                window.location.href = "/";
               }
             }}>
               Contact
@@ -69,6 +74,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   className="h-16 w-auto"
                 />
               </Link>
+            </div>
+            <div className="text-center hidden md:block">
               <p className="text-muted-foreground">&copy; {new Date().getFullYear()} AIChronicles. All rights reserved.</p>
             </div>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
@@ -82,6 +89,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <FaXTwitter className="w-6 h-6" />
               </a>
             </div>
+          </div>
+          <div className="text-center mt-4 md:hidden">
+            <p className="text-muted-foreground">&copy; {new Date().getFullYear()} AIChronicles. All rights reserved.</p>
           </div>
         </div>
       </footer>
