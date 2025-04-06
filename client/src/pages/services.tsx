@@ -122,6 +122,30 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Projects Showcase */}
+      <section className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <Card key={num}>
+              <CardContent className="pt-6">
+                <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={`/images/project-gif-${num}.gif`} 
+                    alt={`Project ${num}`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/placeholder-gif.svg';
+                    }}
+                  />
+                </div>
+                <p className="text-center">Project {num} Demo</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">What I Offer</h2>
@@ -143,30 +167,6 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects Showcase */}
-      <section className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Featured Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <Card key={num}>
-              <CardContent className="pt-6">
-                <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
-                  <img 
-                    src={`/images/project-gif-${num}.gif`} 
-                    alt={`Project ${num}`}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = '/images/placeholder-gif.svg';
-                    }}
-                  />
-                </div>
-                <p className="text-center">Project {num} Demo</p>
               </CardContent>
             </Card>
           ))}
