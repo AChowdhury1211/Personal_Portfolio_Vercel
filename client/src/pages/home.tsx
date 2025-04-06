@@ -121,7 +121,14 @@ export default function Home() {
                   speed and scalability.
                 </p>
               </div>
-
+              <div className="flex justify-center gap-4">
+                <Button variant="default" size="lg" onClick={scrollToContact} className="text-lg px-8 py-6">
+                  Contact Me
+                </Button>
+                <Button variant="outline" size="lg" onClick={handleServicesClick} className="text-lg px-8 py-6">
+                  View Services
+                </Button>
+              </div>
             </div>
           </div>
         </BackgroundSlideshow>
