@@ -126,15 +126,16 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="prose dark:prose-invert max-w-none">
             <p className="mb-4">
-              I'm a Lead Generative AI R&D Engineer, MLOps specialist, and independent consultant. I write about AI video generation, 3D reconstruction, and how to systematically improve generative AI applications.
+              I'm an AI/ML Research Engineer, MLOps Specialist, and an independent consultant. 
+              I specialize in generative AI for Image generation, Computer Vision and 3D applications.
             </p>
             
             <p className="mb-4">
-              After experiences at Angel Commerce and Beanble, I've developed expertise in transforming cutting-edge AI research into production-ready solutions. Instead of just implementing models, I build complete pipelines that solve real business problems—reducing costs, improving efficiency, and creating new capabilities.
+              In just over a year of focused AI development and research, I've helped multiple startups in transforming cutting-edge AI research into production-ready solutions. I build complete pipelines that solve real business problems, reducing costs and improving efficiency/speed.
             </p>
             
             <p className="mb-6">
-              I've helped multiple companies productionize their AI research, from image-to-3D transformations to virtual staging applications. When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
+              When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
             </p>
             
             <h3 className="text-2xl font-semibold mt-8 mb-4">Independent Consulting</h3>
@@ -143,10 +144,9 @@ export default function Home() {
             </p>
             
             <ul className="list-disc pl-6 mb-6">
+              <li className="mb-1">Transforming research papers into working proof-of-concepts (POCs)</li>
               <li className="mb-1">Building production-ready generative AI pipelines</li>
-              <li className="mb-1">LoRA training and fine-tuning for Stable Diffusion models</li>
-              <li className="mb-1">Transforming research papers into working prototypes</li>
-              <li className="mb-1">Deploying AI solutions on AWS and Runpod environments</li>
+              <li className="mb-1">Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate</li>
             </ul>
             
             <p className="mb-4">
@@ -154,7 +154,7 @@ export default function Home() {
             </p>
             
             <p>
-              Feel free to reach out if you're interested in partnering up or collaborating.
+              Feel free to reach out if you're interested in discussing potential collaborations or exploring how my expertise can benefit your AI initiatives.
             </p>
           </div>
         </div>
