@@ -135,14 +135,16 @@ export default function Home() {
               When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
             </p>
 
-            <p className="mb-6">
-              I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
-            </p>
-            
-            <div className="mb-6">
-              <p className="text-center mb-2">• Transforming research papers into working proof-of-concepts (POCs)</p>
-              <p className="text-center mb-2">• Building production-ready generative AI pipelines</p>
-              <p className="text-center mb-2">• Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</p>
+            <div className="mb-6 text-center">
+              <p className="mb-2">
+                I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
+              </p>
+              
+              <div className="mb-2 mx-auto" style={{ textAlign: 'center', maxWidth: '680px', display: 'inline-block' }}>
+                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Transforming research papers into working proof-of-concepts (POCs)</p>
+                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Building production-ready generative AI pipelines</p>
+                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</p>
+              </div>
             </div>
               
             <p className="mb-6">
