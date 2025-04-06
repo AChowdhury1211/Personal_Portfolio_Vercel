@@ -164,14 +164,18 @@ export default function Home() {
             <span className="font-medium">LinkedIn</span>
           </a>
           <a 
-            href="#twitter" 
+            href="https://x.com/Anweshac1211" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-4 group"
           >
             <FaXTwitter className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">Twitter</span>
+            <span className="font-medium">X</span>
           </a>
           <a 
-            href="#github" 
+            href="https://github.com/AChowdhury1211" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-4 group"
           >
             <SiGithub className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />

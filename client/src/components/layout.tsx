@@ -53,13 +53,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Contact
             </a>
             <div className="border-l pl-6 flex items-center gap-4">
-              <a href="#github" className="text-muted-foreground hover:text-primary">
+              <a href="https://github.com/AChowdhury1211" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <SiGithub className="w-5 h-5" />
               </a>
               <a href="https://www.linkedin.com/in/anwesha-chowdhury/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <SiLinkedin className="w-5 h-5" />
               </a>
-              <a href="#twitter" className="text-muted-foreground hover:text-primary">
+              <a href="https://x.com/Anweshac1211" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <FaXTwitter className="w-5 h-5" />
               </a>
             </div>

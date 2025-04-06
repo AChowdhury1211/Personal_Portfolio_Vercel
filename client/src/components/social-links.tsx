@@ -3,8 +3,8 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export function SocialLinks() {
   const links = [
-    { icon: SiGithub, href: "#", label: "GitHub" },
-    { icon: FaXTwitter, href: "#", label: "X (Twitter)" },
+    { icon: SiGithub, href: "https://github.com/AChowdhury1211", label: "GitHub" },
+    { icon: FaXTwitter, href: "https://x.com/Anweshac1211", label: "X" },
     { icon: SiLinkedin, href: "https://www.linkedin.com/in/anwesha-chowdhury/", label: "LinkedIn" },
     { icon: SiUpwork, href: "https://www.upwork.com/freelancers/~0105df259d22f176e7", label: "Upwork" },
     { icon: SiSubstack, href: "#", label: "Substack" },
