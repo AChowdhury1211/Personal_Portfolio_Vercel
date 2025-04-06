@@ -37,6 +37,13 @@ export class MemStorage implements IStorage {
       createdAt: new Date(),
     };
     this.contacts.set(id, submission);
+    
+    // Log that this would normally send an email to achowdhury1211@gmail.com in a real environment
+    console.log(`Would send email to: achowdhury1211@gmail.com`);
+    console.log(`From: ${contact.name} (${contact.email})`);
+    console.log(`Service Tier: ${contact.serviceTier}`);
+    console.log(`Message: ${contact.message}`);
+    
     return submission;
   }
 }

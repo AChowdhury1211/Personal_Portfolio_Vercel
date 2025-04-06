@@ -254,15 +254,15 @@ export default function Home() {
                 <p className="text-muted-foreground mb-4">
                   {service.description}
                 </p>
-                <p className="text-2xl font-bold mb-4">{service.price}</p>
+                <p className="text-2xl font-bold mb-4 text-primary dark:text-primary-foreground">{service.price}</p>
                 
                 {service.features && (
                   <div className="text-left">
                     <ul className="space-y-2">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                          {feature}
+                        <li key={feature} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -283,7 +283,7 @@ export default function Home() {
           {testimonials.map((testimonial) => (
             <Card key={testimonial.name} className="flex flex-col">
               <CardContent className="pt-6">
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 mb-4 text-left">
                   <Avatar>
                     <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                   </Avatar>
@@ -294,7 +294,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <p className="text-muted-foreground italic">
+                <p className="text-muted-foreground italic text-left">
                   "{testimonial.content}"
                 </p>
               </CardContent>

@@ -97,9 +97,9 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Trending Research Areas */}
+      {/* Trending Research Papers */}
       <section className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center">Trending Research Areas</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center">Trending Research Papers</h2>
         <div className="grid md:grid-cols-2 gap-12">
           {researchAreas.map((area) => (
             <Card key={area.title} className="flex flex-col md:flex-row overflow-hidden">
@@ -130,16 +130,16 @@ export default function Services() {
             <Card key={service.title}>
               <CardHeader>
                 <CardTitle>{service.title}</CardTitle>
-                <div className="mt-2 text-xl font-bold text-primary">{service.price}</div>
+                <div className="mt-2 text-xl font-bold text-primary dark:text-primary-foreground">{service.price}</div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
                 <h4 className="font-medium mb-2">What I Offer</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {feature}
+                    <li key={feature} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
