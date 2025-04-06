@@ -27,7 +27,7 @@ const researchAreas = [
 
 const services = [
   {
-    title: "Initial Consultation",
+    title: "S → Initial Consultation",
     price: "$500",
     description: "1-hour strategy call",
     features: [
@@ -38,7 +38,7 @@ const services = [
     ],
   },
   {
-    title: "Foundation Package",
+    title: "A → Foundation Package",
     price: "$9,500 per month",
     description: "20 hours of dedicated research and unlimited email support",
     features: [
@@ -49,7 +49,7 @@ const services = [
     ],
   },
   {
-    title: "Implementation Package",
+    title: "B → Implementation Package",
     price: "Starts at $45k for the entire engagement",
     description: "Complete proof-of-concept development",
     features: [
@@ -61,7 +61,7 @@ const services = [
     ],
   },
   {
-    title: "Enterprise Solution",
+    title: "C → Enterprise Solution",
     price: "Starts at $110k for the entire engagement",
     description: "End-to-end custom AI solution",
     features: [

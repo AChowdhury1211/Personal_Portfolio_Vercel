@@ -15,22 +15,22 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const services = [
   {
-    title: "Initial Consultation",
+    title: "S → Initial Consultation",
     description: "1-hour strategy call",
     price: "$500",
   },
   {
-    title: "Foundation Package",
+    title: "A → Foundation Package",
     description: "20 hours of dedicated research and unlimited email support",
     price: "$9,500/month",
   },
   {
-    title: "Implementation Package",
+    title: "B → Implementation Package",
     description: "Complete proof-of-concept development",
     price: "Starts at $45k",
   },
   {
-    title: "Enterprise Solution",
+    title: "C → Enterprise Solution",
     description: "End-to-end custom AI solution",
     price: "Starts at $110k",
   },

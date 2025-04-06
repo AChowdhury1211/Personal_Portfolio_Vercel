@@ -99,9 +99,10 @@ export function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="basic">Basic Consultation</SelectItem>
-                  <SelectItem value="professional">Professional Package</SelectItem>
-                  <SelectItem value="enterprise">Enterprise Solution</SelectItem>
+                  <SelectItem value="initial">S → Initial Consultation</SelectItem>
+                  <SelectItem value="foundation">A → Foundation Package</SelectItem>
+                  <SelectItem value="implementation">B → Implementation Package</SelectItem>
+                  <SelectItem value="enterprise">C → Enterprise Solution</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
