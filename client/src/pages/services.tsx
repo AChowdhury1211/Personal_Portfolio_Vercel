@@ -29,7 +29,7 @@ const services = [
   {
     title: "Initial Consultation",
     price: "$500",
-    description: "A 1-hour strategy call to evaluate your AI implementation needs and provide expert recommendations.",
+    description: "1-hour strategy call",
     features: [
       "Expert evaluation of your AI implementation needs",
       "High-level recommendations for your specific challenges",
@@ -40,7 +40,7 @@ const services = [
   {
     title: "Foundation Package",
     price: "$9,500 per month",
-    description: "20 hours of dedicated research and unlimited email support to help you build a solid AI strategy.",
+    description: "20 hours of dedicated research and unlimited email support",
     features: [
       "Expert evaluation of AI research papers and technologies",
       "Implementation recommendations for your specific use case",
@@ -51,7 +51,7 @@ const services = [
   {
     title: "Implementation Package",
     price: "Starts at $45k for the entire engagement",
-    description: "Complete proof-of-concept development based on cutting-edge research with custom model adaptation.",
+    description: "Complete proof-of-concept development",
     features: [
       "Complete proof-of-concept development based on cutting-edge research",
       "Custom model adaptation and fine-tuning for your business needs",
@@ -63,7 +63,7 @@ const services = [
   {
     title: "Enterprise Solution",
     price: "Starts at $110k for the entire engagement",
-    description: "End-to-end custom AI solution from research to production with full integration and ongoing support.",
+    description: "End-to-end custom AI solution",
     features: [
       "End-to-end custom AI solution from research to production",
       "Advanced model architecture design and optimization",

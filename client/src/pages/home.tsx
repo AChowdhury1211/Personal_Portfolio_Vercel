@@ -16,22 +16,22 @@ import { FaXTwitter } from "react-icons/fa6";
 const services = [
   {
     title: "Initial Consultation",
-    description: "1-hour strategy call with expert evaluation and recommendations",
+    description: "1-hour strategy call",
     price: "$500",
   },
   {
     title: "Foundation Package",
-    description: "20 hours of dedicated research and unlimited email support per month",
+    description: "20 hours of dedicated research and unlimited email support",
     price: "$9,500/month",
   },
   {
     title: "Implementation Package",
-    description: "Complete proof-of-concept development with custom model adaptation",
+    description: "Complete proof-of-concept development",
     price: "Starts at $45k",
   },
   {
     title: "Enterprise Solution",
-    description: "End-to-end custom AI solution from research to production",
+    description: "End-to-end custom AI solution",
     price: "Starts at $110k",
   },
 ];
