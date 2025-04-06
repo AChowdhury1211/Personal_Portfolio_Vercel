@@ -1,53 +1,67 @@
 import { type Subscription, type InsertSubscription, type Contact, type InsertContact } from "@shared/schema";
 import nodemailer from "nodemailer";
+import sgMail from '@sendgrid/mail';
+
+// Configure email service: SendGrid for production, Ethereal for development
+const useSendGrid = process.env.SENDGRID_API_KEY ? true : false;
+
+// If SendGrid API key is available, use SendGrid
+if (useSendGrid) {
+  console.log("Using SendGrid for email delivery");
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+} else {
+  console.log("SendGrid API key not found, fallback to Ethereal (test emails)");
+}
 
 // Create reusable transporter object using ethereal email for testing
 let transporter: nodemailer.Transporter;
 let testAccount: any;
 
-// Always use Ethereal for testing purposes since it doesn't require actual credentials
-console.log("Creating test email account with Ethereal...");
+// Only set up Ethereal if we're not using SendGrid
+if (!useSendGrid) {
+  console.log("Creating test email account with Ethereal...");
 
-// Initialize with a fallback until the async creation completes
-transporter = {
-  sendMail: (mailOptions: any) => {
-    console.log("Email transporter still initializing. Would send:", mailOptions);
-    return Promise.resolve({ messageId: "placeholder-while-initializing" });
-  }
-} as any;
+  // Initialize with a fallback until the async creation completes
+  transporter = {
+    sendMail: (mailOptions: any) => {
+      console.log("Email transporter still initializing. Would send:", mailOptions);
+      return Promise.resolve({ messageId: "placeholder-while-initializing" });
+    }
+  } as any;
 
-// Async-create a test account at ethereal.email
-nodemailer.createTestAccount()
-  .then(account => {
-    // Store the test account info
-    testAccount = account;
-    
-    // Create a test SMTP transporter
-    transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: account.user, // generated ethereal user
-        pass: account.pass, // generated ethereal password
-      },
+  // Async-create a test account at ethereal.email
+  nodemailer.createTestAccount()
+    .then(account => {
+      // Store the test account info
+      testAccount = account;
+      
+      // Create a test SMTP transporter
+      transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: account.user, // generated ethereal user
+          pass: account.pass, // generated ethereal password
+        },
+      });
+      
+      console.log("Ethereal email account created successfully");
+      console.log(`Username: ${account.user}`);
+      console.log(`Web interface: https://ethereal.email/login`);
+    })
+    .catch(err => {
+      console.error("Failed to create Ethereal email account", err);
+      
+      // Fallback to a simple logger "transporter" that doesn't actually send emails
+      transporter = {
+        sendMail: (mailOptions: any) => {
+          console.log("Using fallback email logger. Would send email:", mailOptions);
+          return Promise.resolve({ messageId: "test-message-id" });
+        }
+      } as any;
     });
-    
-    console.log("Ethereal email account created successfully");
-    console.log(`Username: ${account.user}`);
-    console.log(`Web interface: https://ethereal.email/login`);
-  })
-  .catch(err => {
-    console.error("Failed to create Ethereal email account", err);
-    
-    // Fallback to a simple logger "transporter" that doesn't actually send emails
-    transporter = {
-      sendMail: (mailOptions: any) => {
-        console.log("Using fallback email logger. Would send email:", mailOptions);
-        return Promise.resolve({ messageId: "test-message-id" });
-      }
-    } as any;
-  });
+}
 
 export interface IStorage {
   createSubscription(sub: InsertSubscription): Promise<Subscription>;
@@ -88,9 +102,9 @@ export class MemStorage implements IStorage {
     this.contacts.set(id, submission);
     
     try {
-      // Create email message options that work for both real and test scenarios
-      const mailOptions = {
-        from: '"Portfolio Contact Form" <canwesha91@gmail.com>', // sender address
+      // Create email content
+      const emailContent = {
+        from: 'canwesha91@gmail.com', // sender address - use your verified SendGrid sender
         to: 'achowdhury1211@gmail.com', // receiver address
         replyTo: contact.email, // Set reply-to as the contact's email
         subject: `New Contact Form Submission: ${contact.serviceTier} Inquiry`,
@@ -111,12 +125,15 @@ ${contact.message}
         `,
       };
       
-      // Try to send email using the configured transporter
-      if (transporter) {
-        // Send email using the transporter (using Ethereal for testing)
-        const info = await transporter.sendMail(mailOptions);
+      // Use SendGrid if API key is available, otherwise fall back to Ethereal
+      if (useSendGrid) {
+        // Send using SendGrid
+        await sgMail.send(emailContent);
+        console.log('✅ Contact form email sent successfully via SendGrid');
+      } else if (transporter) {
+        // Send using Ethereal for testing/development
+        const info = await transporter.sendMail(emailContent);
         
-        // Show the preview URL where the email can be viewed in a test environment
         console.log('✅ Contact form email sent successfully');
         
         // For Ethereal test emails, there's a preview URL we can show in console
@@ -129,12 +146,11 @@ ${contact.message}
             console.log('---------------------------------------');
           }
         } catch (err) {
-          // If getTestMessageUrl fails, it's probably not an Ethereal test email
-          console.log('(Real email sent, no preview available)');
+          console.log('Error generating preview URL');
         }
       } else {
-        // This happens if the transporter hasn't been initialized yet (race condition)
-        console.log('Email transporter not ready yet. Email content would be:');
+        // Fallback - log what would have been sent
+        console.log('Email service not ready. Email content would be:');
         console.log('---------------------------------------');
         console.log(`To: achowdhury1211@gmail.com`);
         console.log(`From: ${contact.name} (${contact.email})`);
