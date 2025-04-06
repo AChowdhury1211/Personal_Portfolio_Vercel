@@ -17,7 +17,7 @@ const services = [
   {
     title: "S → Initial Consultation",
     description: "1-hour strategy call",
-    price: "$500",
+    price: "$70",
     features: [
       "Expert evaluation of your AI implementation needs",
       "High-level recommendations for your specific challenges",
@@ -27,8 +27,8 @@ const services = [
   },
   {
     title: "A → Foundation Package",
-    description: "20 hours of dedicated research and unlimited email support",
-    price: "$9,500/month",
+    description: "40 hours of dedicated research and unlimited email support",
+    price: "$2,400/month",
     features: [
       "Expert evaluation of AI research papers and technologies",
       "Implementation recommendations for your specific use case",
@@ -39,7 +39,7 @@ const services = [
   {
     title: "B → Implementation Package",
     description: "Complete proof-of-concept development",
-    price: "Starts at $45k",
+    price: "Starts at $10k",
     features: [
       "Complete proof-of-concept development based on cutting-edge research",
       "Custom model adaptation and fine-tuning for your business needs",
@@ -51,12 +51,12 @@ const services = [
   {
     title: "C → Enterprise Solution",
     description: "End-to-end custom AI solution",
-    price: "Starts at $110k",
+    price: "Starts at $30k",
     features: [
       "End-to-end custom AI solution from research to production",
       "Advanced model architecture design and optimization",
       "Full integration with existing systems and workflows",
-      "Comprehensive training for your technical team",
+      "Comprehensive AI mentorship for your technical team",
       "6 months of ongoing optimization and support",
       "Scalability planning and future technology roadmap",
     ],
@@ -66,7 +66,7 @@ const services = [
 const testimonials = [
   {
     name: "Gaurav Dhamijia",
-    role: "Principal Solutions Architect at AWS",
+    role: "Principal Solutions Architect | AWS",
     content:
       "Anwesha demonstrated strong expertise in AI/ML and Generative AI domains, delivering high-quality work on POCs involving AWS Generative AI services especially Amazon Bedrock. Her communication was clear and timely, ensuring alignment throughout the project. I would strongly recommend her for similar projects.",
     avatar: "GD",
