@@ -32,12 +32,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </a>
             <a href="#contact" className="hover:text-primary" onClick={(e) => {
               e.preventDefault();
+              
+              // Find the section that contains the contact form (Ready to Work Together section)
+              const workTogetherSection = document.querySelector('.bg-primary\\/5');
               const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
+              
+              if (workTogetherSection) {
+                // Scroll to the "Ready to Work Together" section
+                workTogetherSection.scrollIntoView({ behavior: "smooth", block: "start" });
+              } else if (contactSection) {
+                // Fallback to contact form if the section can't be found
+                contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
               } else {
-                // If not on home page, go to home page first then scroll
-                window.location.href = "/#contact";
+                // If not on home page, go to home page first then set up a function
+                // to scroll to the contact section after the page loads
+                sessionStorage.setItem('scrollToContact', 'true');
+                window.location.href = "/";
               }
             }}>
               Contact

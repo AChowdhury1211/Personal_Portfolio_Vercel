@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { ContactForm } from "@/components/contact-form";
@@ -68,9 +69,21 @@ export default function Home() {
   
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    scrollToContactSection();
+  };
+  
+  // Function to scroll to the contact section
+  const scrollToContactSection = () => {
+    // Find the "Ready to Work Together" section first
+    const workTogetherSection = document.querySelector('.bg-primary\\/5');
+    if (workTogetherSection) {
+      workTogetherSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // Fallback to contact form if the section can't be found
+      const element = document.getElementById("contact");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
   
@@ -83,6 +96,19 @@ export default function Home() {
     "./images/bg-image1.jpg",
     "./images/bg-image2.jpg",
   ];
+  
+  // Check if we need to scroll to contact section after navigation
+  useEffect(() => {
+    if (sessionStorage.getItem('scrollToContact') === 'true') {
+      // Clear the flag
+      sessionStorage.removeItem('scrollToContact');
+      
+      // Delay the scroll slightly to ensure the page is fully rendered
+      setTimeout(() => {
+        scrollToContactSection();
+      }, 500);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col gap-8 pb-16">
