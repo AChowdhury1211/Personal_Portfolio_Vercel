@@ -121,16 +121,40 @@ export default function Home() {
       </section>
       
       {/* About Me Section */}
-      <section className="container mx-auto px-4 mt-16 text-center">
-        <div>
-          <h2 className="text-4xl font-bold mb-8">About Me</h2>
+      <section className="container mx-auto px-4 mt-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="prose dark:prose-invert max-w-none">
+            <p className="mb-4">
+              I'm a Lead Generative AI R&D Engineer, MLOps specialist, and independent consultant. I write about AI video generation, 3D reconstruction, and how to systematically improve generative AI applications.
+            </p>
+            
+            <p className="mb-4">
+              After experiences at Angel Commerce and Beanble, I've developed expertise in transforming cutting-edge AI research into production-ready solutions. Instead of just implementing models, I build complete pipelines that solve real business problems—reducing costs, improving efficiency, and creating new capabilities.
+            </p>
+            
+            <p className="mb-6">
+              I've helped multiple companies productionize their AI research, from image-to-3D transformations to virtual staging applications. When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
+            </p>
+            
+            <h3 className="text-2xl font-semibold mt-8 mb-4">Independent Consulting</h3>
+            <p className="mb-4">
+              I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
+            </p>
+            
+            <ul className="list-disc pl-6 mb-6">
+              <li className="mb-1">Building production-ready generative AI pipelines</li>
+              <li className="mb-1">LoRA training and fine-tuning for Stable Diffusion models</li>
+              <li className="mb-1">Transforming research papers into working prototypes</li>
+              <li className="mb-1">Deploying AI solutions on AWS and Runpod environments</li>
+            </ul>
+            
+            <p className="mb-4">
+              I'm also the creator of AIChronicles, a blog that focuses on sharing insights from cutting-edge research papers on various AI-related topics and the application of MLOps to optimize development and deployment.
+            </p>
+            
             <p>
-              As an AI Research Engineer, I specialize in developing
-              proof-of-concept solutions that demonstrate the practical
-              applications of cutting-edge AI technologies. My expertise lies in
-              translating complex AI research into scalable, business-ready
-              solutions.
+              Feel free to reach out if you're interested in partnering up or collaborating.
             </p>
           </div>
         </div>
