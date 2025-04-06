@@ -63,7 +63,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col items-center justify-center gap-4">
             <Link href="/" className="flex items-center gap-2">
               <img 
-                src="/images/aichronicles_logo.svg" 
+                src="/images/aichronicles_logo.png" 
                 alt="AIChronicles Logo" 
                 className="h-20 w-auto"
               />

@@ -84,8 +84,8 @@ export default function Home() {
 
   // Define the background images with absolute URLs
   const backgroundImages = [
-    "./images/bg-image1.svg",
-    "./images/bg-image2.svg",
+    "/images/bg-image1.jpg",
+    "/images/bg-image2.jpg",
   ];
   
   // Check if we need to scroll to contact section after navigation
@@ -153,7 +153,7 @@ export default function Home() {
       {/* Connect With Me Section */}
       <section className="container mx-auto px-4 mt-16 text-center">
         <h2 className="text-4xl font-bold mb-8">Connect With Me</h2>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-4 gap-6">
           <a
             href="https://www.linkedin.com/in/anwesha-chowdhury/"
             target="_blank"
@@ -181,6 +181,15 @@ export default function Home() {
             <SiGithub className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">GitHub</span>
           </a>
+          <a 
+            href="https://www.upwork.com/freelancers/~0105df259d22f176e7" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 group"
+          >
+            <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
+            <span className="font-medium">Upwork</span>
+          </a>
         </div>
       </section>
 
@@ -204,21 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hire Me Section */}
-      <section className="container mx-auto px-4 mt-16 text-center">
-        <h2 className="text-4xl font-bold mb-8">Hire Me On</h2>
-        <div className="flex justify-center">
-          <a 
-            href="https://www.upwork.com/freelancers/~0105df259d22f176e7" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-4 group"
-          >
-            <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">Upwork</span>
-          </a>
-        </div>
-      </section>
+
 
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 mt-16 text-center">
