@@ -9,9 +9,7 @@ import { useLocation } from "wouter";
 import {
   SiGithub,
   SiLinkedin,
-  SiYoutube,
   SiUpwork,
-  SiFiverr,
 } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -47,13 +45,6 @@ const testimonials = [
     content:
       "Their AI research background brought invaluable insights to our project.",
     avatar: "SW",
-  },
-  {
-    name: "Michael Chen",
-    role: "Product Manager",
-    content:
-      "Delivered an innovative AI solution that transformed our business processes.",
-    avatar: "MC",
   },
   {
     name: "Michael Chen",
@@ -162,23 +153,27 @@ export default function Home() {
       {/* Connect With Me Section */}
       <section className="container mx-auto px-4 mt-16 text-center">
         <h2 className="text-4xl font-bold mb-8">Connect With Me</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-3 gap-8">
           <a
-            href="#linkedin"
+            href="https://www.linkedin.com/in/anwesha-chowdhury/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-4 group"
           >
             <SiLinkedin className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">LinkedIn</span>
           </a>
-          <a href="#youtube" className="flex flex-col items-center gap-4 group">
-            <SiYoutube className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">YouTube</span>
-          </a>
-          <a href="#twitter" className="flex flex-col items-center gap-4 group">
+          <a 
+            href="#twitter" 
+            className="flex flex-col items-center gap-4 group"
+          >
             <FaXTwitter className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">Twitter</span>
           </a>
-          <a href="#github" className="flex flex-col items-center gap-4 group">
+          <a 
+            href="#github" 
+            className="flex flex-col items-center gap-4 group"
+          >
             <SiGithub className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">GitHub</span>
           </a>
@@ -208,14 +203,15 @@ export default function Home() {
       {/* Hire Me Section */}
       <section className="container mx-auto px-4 mt-16 text-center">
         <h2 className="text-4xl font-bold mb-8">Hire Me On</h2>
-        <div className="grid grid-cols-2 gap-8">
-          <a href="#upwork" className="flex flex-col items-center gap-4 group">
+        <div className="flex justify-center">
+          <a 
+            href="https://www.upwork.com/freelancers/~0105df259d22f176e7" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 group"
+          >
             <SiUpwork className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
             <span className="font-medium">Upwork</span>
-          </a>
-          <a href="#fiverr" className="flex flex-col items-center gap-4 group">
-            <SiFiverr className="w-16 h-16 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="font-medium">Fiverr</span>
           </a>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { ThemeToggle } from "./theme-toggle";
 import { Link } from "wouter";
-import { SiGithub, SiLinkedin, SiYoutube } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -56,11 +56,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <a href="#github" className="text-muted-foreground hover:text-primary">
                 <SiGithub className="w-5 h-5" />
               </a>
-              <a href="#linkedin" className="text-muted-foreground hover:text-primary">
+              <a href="https://www.linkedin.com/in/anwesha-chowdhury/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                 <SiLinkedin className="w-5 h-5" />
-              </a>
-              <a href="#youtube" className="text-muted-foreground hover:text-primary">
-                <SiYoutube className="w-5 h-5" />
               </a>
               <a href="#twitter" className="text-muted-foreground hover:text-primary">
                 <FaXTwitter className="w-5 h-5" />

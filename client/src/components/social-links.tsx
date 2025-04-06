@@ -1,15 +1,13 @@
-import { SiGithub, SiLinkedin, SiUpwork, SiFiverr, SiSubstack, SiYoutube } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiUpwork, SiSubstack } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 
 export function SocialLinks() {
   const links = [
     { icon: SiGithub, href: "#", label: "GitHub" },
     { icon: FaXTwitter, href: "#", label: "X (Twitter)" },
-    { icon: SiLinkedin, href: "#", label: "LinkedIn" },
-    { icon: SiUpwork, href: "#", label: "Upwork" },
-    { icon: SiFiverr, href: "#", label: "Fiverr" },
+    { icon: SiLinkedin, href: "https://www.linkedin.com/in/anwesha-chowdhury/", label: "LinkedIn" },
+    { icon: SiUpwork, href: "https://www.upwork.com/freelancers/~0105df259d22f176e7", label: "Upwork" },
     { icon: SiSubstack, href: "#", label: "Substack" },
-    { icon: SiYoutube, href: "#", label: "YouTube" },
   ];
 
   return (

@@ -9,10 +9,10 @@ const posts = [
     type: "article",
   },
   {
-    title: "Recent YouTube Video",
-    excerpt: "Tutorial on building scalable applications...",
-    date: "2024-03-18",
-    type: "video",
+    title: "AI Research Paper",
+    excerpt: "Exploring innovations in machine learning architectures...",
+    date: "2024-03-15",
+    type: "article",
   },
 ];
 
@@ -36,15 +36,8 @@ export default function Blog() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-2xl font-bold mb-4">YouTube Embed</h2>
-        <div className="aspect-video">
-          <iframe
-            className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video"
-            allowFullScreen
-          />
-        </div>
+        <h2 className="text-2xl font-bold mb-4">LinkedIn Articles</h2>
+        <p>Check out my latest professional articles on LinkedIn</p>
       </div>
 
       {/* Contact Section */}
