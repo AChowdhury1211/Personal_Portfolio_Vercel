@@ -18,6 +18,12 @@ const services = [
     title: "S → Initial Consultation",
     description: "1-hour strategy call",
     price: "$500",
+    features: [
+      "Expert evaluation of your AI implementation needs",
+      "High-level recommendations for your specific challenges",
+      "Assessment of technical feasibility",
+      "Written summary of key insights and next steps",
+    ],
   },
   {
     title: "A → Foundation Package",
@@ -227,7 +233,20 @@ export default function Home() {
                 <p className="text-muted-foreground mb-4">
                   {service.description}
                 </p>
-                <p className="text-2xl font-bold">{service.price}</p>
+                <p className="text-2xl font-bold mb-4">{service.price}</p>
+                
+                {service.features && (
+                  <div className="text-left">
+                    <ul className="space-y-2">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
