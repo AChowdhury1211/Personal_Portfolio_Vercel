@@ -30,9 +30,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <a href="https://aichronicles1211.substack.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
               Blog
             </a>
-            <Link href="/#contact">
-              <a className="hover:text-primary">Contact</a>
-            </Link>
+            <a href="#contact" className="hover:text-primary" onClick={(e) => {
+              e.preventDefault();
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              } else {
+                // If not on home page, go to home page first then scroll
+                window.location.href = "/#contact";
+              }
+            }}>
+              Contact
+            </a>
             <div className="border-l pl-6 flex items-center gap-4">
               <a href="#github" className="text-muted-foreground hover:text-primary">
                 <SiGithub className="w-5 h-5" />
