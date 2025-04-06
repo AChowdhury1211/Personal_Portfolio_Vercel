@@ -154,19 +154,25 @@ export default function Services() {
             <Card key={service.title}>
               <CardHeader>
                 <CardTitle>{service.title}</CardTitle>
-                <div className="mt-2 text-xl font-bold text-primary dark:text-primary-foreground">{service.price}</div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
-                <h4 className="font-medium mb-2">What I Offer</h4>
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground mb-4">
+                  {service.description}
+                </p>
+                <p className="text-2xl font-bold mb-4 text-primary dark:text-primary-foreground">{service.price}</p>
+                
+                {service.features && (
+                  <div className="text-left">
+                    <ul className="space-y-2">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
