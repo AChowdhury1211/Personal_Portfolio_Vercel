@@ -16,7 +16,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const services = [
   {
     title: "S → Initial Consultation",
-    description: "1-hour strategy call",
+    description: "• Expert evaluation of needs\n• Recommendations for challenges\n• Technical feasibility assessment\n• Written summary & next steps",
     price: "$500",
   },
   {
