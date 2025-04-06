@@ -15,19 +15,24 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const services = [
   {
-    title: "Basic Consultation",
-    description: "Initial POC development and consultation",
-    price: "$100",
-  },
-  {
-    title: "Professional Package",
-    description: "Comprehensive AI solution development",
+    title: "Initial Consultation",
+    description: "1-hour strategy call with expert evaluation and recommendations",
     price: "$500",
   },
   {
+    title: "Foundation Package",
+    description: "20 hours of dedicated research and unlimited email support per month",
+    price: "$9,500/month",
+  },
+  {
+    title: "Implementation Package",
+    description: "Complete proof-of-concept development with custom model adaptation",
+    price: "Starts at $45k",
+  },
+  {
     title: "Enterprise Solution",
-    description: "Full-scale AI system implementation",
-    price: "$2000",
+    description: "End-to-end custom AI solution from research to production",
+    price: "Starts at $110k",
   },
 ];
 
@@ -212,7 +217,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="container mx-auto px-4 mt-16 text-center">
         <h2 className="text-4xl font-bold mb-8">Services</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <Card key={service.title}>
               <CardHeader>

@@ -27,33 +27,50 @@ const researchAreas = [
 
 const services = [
   {
-    title: "POC Development",
-    description: "Rapid development of proof-of-concept solutions to validate AI implementation ideas.",
+    title: "Initial Consultation",
+    price: "$500",
+    description: "A 1-hour strategy call to evaluate your AI implementation needs and provide expert recommendations.",
     features: [
-      "Feasibility assessment",
-      "Rapid prototyping",
-      "Technical documentation",
-      "Implementation roadmap",
+      "Expert evaluation of your AI implementation needs",
+      "High-level recommendations for your specific challenges",
+      "Assessment of technical feasibility",
+      "Written summary of key insights and next steps",
     ],
   },
   {
-    title: "AI Research Implementation",
-    description: "Transform academic AI research into practical business solutions.",
+    title: "Foundation Package",
+    price: "$9,500 per month",
+    description: "20 hours of dedicated research and unlimited email support to help you build a solid AI strategy.",
     features: [
-      "Research analysis",
-      "Practical adaptation",
-      "Performance optimization",
-      "Scalability planning",
+      "Expert evaluation of AI research papers and technologies",
+      "Implementation recommendations for your specific use case",
+      "Weekly progress reports and technical documentation",
+      "Direct access to expert consultation via email",
     ],
   },
   {
-    title: "Custom AI Solutions",
-    description: "Development of tailored AI solutions for specific business needs.",
+    title: "Implementation Package",
+    price: "Starts at $45k for the entire engagement",
+    description: "Complete proof-of-concept development based on cutting-edge research with custom model adaptation.",
     features: [
-      "Requirements analysis",
-      "Custom model development",
-      "Integration support",
-      "Performance monitoring",
+      "Complete proof-of-concept development based on cutting-edge research",
+      "Custom model adaptation and fine-tuning for your business needs",
+      "Comprehensive technical documentation and knowledge transfer",
+      "Bi-weekly sync meetings and implementation roadmap",
+      "3 months of post-implementation support",
+    ],
+  },
+  {
+    title: "Enterprise Solution",
+    price: "Starts at $110k for the entire engagement",
+    description: "End-to-end custom AI solution from research to production with full integration and ongoing support.",
+    features: [
+      "End-to-end custom AI solution from research to production",
+      "Advanced model architecture design and optimization",
+      "Full integration with existing systems and workflows",
+      "Comprehensive training for your technical team",
+      "6 months of ongoing optimization and support",
+      "Scalability planning and future technology roadmap",
     ],
   },
 ];
@@ -108,14 +125,16 @@ export default function Services() {
       {/* Services Section */}
       <section className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">What I Offer</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service) => (
             <Card key={service.title}>
               <CardHeader>
                 <CardTitle>{service.title}</CardTitle>
+                <div className="mt-2 text-xl font-bold text-primary">{service.price}</div>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
+                <h4 className="font-medium mb-2">What I Offer</h4>
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2">
