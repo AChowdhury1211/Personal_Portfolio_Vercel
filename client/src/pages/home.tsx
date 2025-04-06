@@ -98,13 +98,11 @@ export default function Home() {
                 Hello! I'm Anwesha Chowdhury
               </h1>
               <p className="text-3xl text-gray-200 mb-8">
-                AI Research Engineer | Open Source Contributor | MLOps Dev
+                AI Research Engineer | Open Source Contributor | MLOps Expert
               </p>
               <div className="mb-10 mx-auto max-w-2xl">
                 <p className="text-2xl text-gray-300">
-                  I help companies productionize AI research, leveraging
-                  the best MLOps practices and Cuda programming for high inference
-                  speed and scalability.
+                  I help companies productionize AI research, implementing robust MLOps practices and low-level CUDA programming to achieve improved inference speed, performance and scalability.
                 </p>
               </div>
               <div className="flex justify-center gap-4">
@@ -121,39 +119,26 @@ export default function Home() {
       </section>
       
       {/* About Me Section */}
-      <section className="container mx-auto px-4 mt-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-10 text-center">About Me</h2>
-          <div className="prose dark:prose-invert max-w-none text-lg">
-            <p className="mb-6">
-              I'm an AI/ML Research Engineer, MLOps Specialist, and an independent consultant. 
-              I specialize in generative AI for Image generation, Computer Vision and 3D applications.
-            </p>
-            
-            <p className="mb-6">
-              In just over a year of focused AI development and research, I've helped multiple startups in transforming cutting-edge AI research into production-ready solutions. I build complete pipelines that solve real business problems, reducing costs and improving efficiency/speed.
-            </p>
-            
-            <p className="mb-8">
-              When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
-            </p>
-            
-            <h3 className="text-2xl font-semibold mt-10 mb-6">Independent Consulting</h3>
-            <p className="mb-5">
+      <section className="container mx-auto px-4 mt-16 text-center">
+        <div>
+          <h2 className="text-4xl font-bold mb-8">About Me</h2>
+          <div className="prose dark:prose-invert max-w-none">
+            <p>
+              I'm a AI/ML Research Engineer, MLOps Specialist, and an independent consultant. 
+              I specialize in generative AI for Image generation, Computer Vision and 3D applications
+
+              In just over a year of focused AI development and research, I've helped multiple startups in transforming cutting-edge AI research into production-ready solutions. I build complete pipelines that solve real business problems reducing costs and improving efficiency/speed.
+
+            When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
+
               I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
-            </p>
-            
-            <ul className="list-disc pl-8 mb-8 space-y-2">
-              <li>Transforming research papers into working proof-of-concepts (POCs)</li>
-              <li>Building production-ready generative AI pipelines</li>
-              <li>Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC</li>
-            </ul>
-            
-            <p className="mb-6">
+
+              Transforming research papers into working proof-of-concepts (POCs)
+              Building production-ready generative AI pipelines
+              Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.
+              
               I'm also the creator of AIChronicles, a blog that focuses on sharing insights from cutting-edge research papers on various AI-related topics and the application of MLOps to optimize development and deployment.
-            </p>
-            
-            <p className="mb-2">
+
               Feel free to reach out if you're interested in discussing potential collaborations or exploring how my expertise can benefit your AI initiatives.
             </p>
           </div>
