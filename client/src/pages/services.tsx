@@ -62,7 +62,10 @@ export default function Services() {
   const [_, setLocation] = useLocation();
 
   const handleContactClick = () => {
-    setLocation("/#contact");
+    // Set a flag in sessionStorage to scroll to contact section after redirection
+    sessionStorage.setItem('scrollToContact', 'true');
+    // Navigate to home page
+    setLocation("/");
   };
 
   return (

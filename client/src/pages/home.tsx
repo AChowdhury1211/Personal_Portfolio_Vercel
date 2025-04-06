@@ -261,18 +261,7 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="container mx-auto px-4 mt-16 text-center">
-        <h2 className="text-4xl font-bold mb-8">Stay Updated</h2>
-        <Card>
-          <CardHeader>
-            <CardTitle>Subscribe to Newsletter</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <NewsletterForm />
-          </CardContent>
-        </Card>
-      </section>
+
     </div>
   );
 }

@@ -59,16 +59,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
 
       <footer className="border-t py-8 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <Link href="/" className="flex items-center gap-2">
-              <img 
-                src="/images/aichronicles_logo.png" 
-                alt="AIChronicles Logo" 
-                className="h-20 w-auto"
-              />
-            </Link>
-            <p className="text-muted-foreground">&copy; {new Date().getFullYear()} AIChronicles. All rights reserved.</p>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Link href="/" className="flex items-center gap-2">
+                <img 
+                  src="/images/aichronicles_logo.png" 
+                  alt="AIChronicles Logo" 
+                  className="h-16 w-auto"
+                />
+              </Link>
+              <p className="text-muted-foreground">&copy; {new Date().getFullYear()} AIChronicles. All rights reserved.</p>
+            </div>
+            <div className="flex items-center gap-4 mt-4 md:mt-0">
+              <a href="https://github.com/AChowdhury1211" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <SiGithub className="w-6 h-6" />
+              </a>
+              <a href="https://www.linkedin.com/in/anwesha-chowdhury/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <SiLinkedin className="w-6 h-6" />
+              </a>
+              <a href="https://x.com/Anweshac1211" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <FaXTwitter className="w-6 h-6" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
