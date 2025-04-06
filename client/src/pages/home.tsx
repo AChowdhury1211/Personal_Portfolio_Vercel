@@ -139,12 +139,12 @@ export default function Home() {
               I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
             </p>
             
-            <div className="flex flex-col items-center mb-6">
-              <ul className="list-disc mb-0 text-left inline-block">
-                <li className="mb-2">Transforming research papers into working proof-of-concepts (POCs)</li>
-                <li className="mb-2">Building production-ready generative AI pipelines</li>
-                <li className="mb-2">Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</li>
-              </ul>
+            <div className="flex justify-center mb-6">
+              <div className="text-center">
+                <p className="mb-2">• Transforming research papers into working proof-of-concepts (POCs)</p>
+                <p className="mb-2">• Building production-ready generative AI pipelines</p>
+                <p className="mb-2">• Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</p>
+              </div>
             </div>
               
             <p className="mb-6">
