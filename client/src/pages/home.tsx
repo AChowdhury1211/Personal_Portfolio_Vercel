@@ -123,22 +123,34 @@ export default function Home() {
         <div>
           <h2 className="text-4xl font-bold mb-8">About Me</h2>
           <div className="prose dark:prose-invert max-w-none">
-            <p>
-              I'm a AI/ML Research Engineer, MLOps Specialist, and an independent consultant. 
-              I specialize in generative AI for Image generation, Computer Vision and 3D applications
+            <p className="mb-4">
+              I'm an AI/ML Research Engineer, MLOps Specialist, and an independent consultant. 
+              I specialize in generative AI for Image generation, Computer Vision and 3D applications.
+            </p>
+            
+            <p className="mb-4">
+              In just over a year of focused AI development and research, I've helped multiple startups in transforming cutting-edge AI research into production-ready solutions. I build complete pipelines that solve real business problems, reducing costs and improving efficiency/speed.
+            </p>
 
-              In just over a year of focused AI development and research, I've helped multiple startups in transforming cutting-edge AI research into production-ready solutions. I build complete pipelines that solve real business problems reducing costs and improving efficiency/speed.
+            <p className="mb-4">
+              When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
+            </p>
 
-            When I'm not leading AI teams, I work as an independent consultant and mentor for professionals entering the AI field.
-
+            <p className="mb-4">
               I run a solo consulting practice focused on helping startups build better practices as they transition to AI. My expertise includes:
-
-              Transforming research papers into working proof-of-concepts (POCs)
-              Building production-ready generative AI pipelines
-              Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.
+            </p>
+            
+            <ul className="list-disc pl-6 mb-4 text-left">
+              <li className="mb-2">Transforming research papers into working proof-of-concepts (POCs)</li>
+              <li className="mb-2">Building production-ready generative AI pipelines</li>
+              <li className="mb-2">Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</li>
+            </ul>
               
+            <p className="mb-4">
               I'm also the creator of AIChronicles, a blog that focuses on sharing insights from cutting-edge research papers on various AI-related topics and the application of MLOps to optimize development and deployment.
+            </p>
 
+            <p>
               Feel free to reach out if you're interested in discussing potential collaborations or exploring how my expertise can benefit your AI initiatives.
             </p>
           </div>
