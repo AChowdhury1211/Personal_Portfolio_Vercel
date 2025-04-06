@@ -141,16 +141,24 @@ export default function Home() {
               </p>
               
               <div className="mb-2 mx-auto" style={{ textAlign: 'center', maxWidth: '680px', display: 'inline-block' }}>
-                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Transforming research papers into working proof-of-concepts (POCs)</p>
-                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Building production-ready generative AI pipelines</p>
-                <p className="text-left mb-2" style={{ textAlign: 'left' }}>• Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</p>
+                <p className="text-left mb-2 pl-20" style={{ textAlign: 'left' }}>• Transforming research papers into working proof-of-concepts (POCs)</p>
+                <p className="text-left mb-2 pl-20" style={{ textAlign: 'left' }}>• Building production-ready generative AI pipelines</p>
+                <p className="text-left mb-2 pl-20" style={{ textAlign: 'left' }}>• Deploying AI solutions on AWS, GCP, Azure, Runpod or Replicate using MLOps best practices including CI/CD pipelines, containerization, monitoring, and IAC.</p>
               </div>
             </div>
-              
-            <p className="mb-6">
+
+            <p className="text-left mb-2" style={{ textAlign: 'left' }}>
               I'm also the creator of AIChronicles, a blog that focuses on sharing insights from cutting-edge research papers on various AI-related topics and the application of MLOps to optimize development and deployment.
             </p>
 
+            <p className="mb-6">
+              Currently, I'm also interested in working on Robotics projects.
+            </p>
+
+            <p className="mb-6">
+              Available for full-time consultation engagements only (6+ month minimum)
+            </p>
+            
             <p>
               Feel free to reach out if you're interested in discussing potential collaborations or exploring how my expertise can benefit your AI initiatives.
             </p>
