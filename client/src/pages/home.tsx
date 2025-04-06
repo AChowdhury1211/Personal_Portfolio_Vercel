@@ -29,16 +29,37 @@ const services = [
     title: "A → Foundation Package",
     description: "20 hours of dedicated research and unlimited email support",
     price: "$9,500/month",
+    features: [
+      "Expert evaluation of AI research papers and technologies",
+      "Implementation recommendations for your specific use case",
+      "Weekly progress reports and technical documentation",
+      "Direct access to expert consultation via email",
+    ],
   },
   {
     title: "B → Implementation Package",
     description: "Complete proof-of-concept development",
     price: "Starts at $45k",
+    features: [
+      "Complete proof-of-concept development based on cutting-edge research",
+      "Custom model adaptation and fine-tuning for your business needs",
+      "Comprehensive technical documentation and knowledge transfer",
+      "Bi-weekly sync meetings and implementation roadmap",
+      "3 months of post-implementation support",
+    ],
   },
   {
     title: "C → Enterprise Solution",
     description: "End-to-end custom AI solution",
     price: "Starts at $110k",
+    features: [
+      "End-to-end custom AI solution from research to production",
+      "Advanced model architecture design and optimization",
+      "Full integration with existing systems and workflows",
+      "Comprehensive training for your technical team",
+      "6 months of ongoing optimization and support",
+      "Scalability planning and future technology roadmap",
+    ],
   },
 ];
 
