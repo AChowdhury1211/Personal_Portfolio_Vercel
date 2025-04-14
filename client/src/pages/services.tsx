@@ -187,7 +187,7 @@ export default function Services() {
           <div 
             className="absolute inset-0 bg-cover bg-center z-0" 
             style={{ 
-              backgroundImage: "url('/images/bg-image1.jpg')", 
+              backgroundImage: "url('/images/bg-image1.svg')", 
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'

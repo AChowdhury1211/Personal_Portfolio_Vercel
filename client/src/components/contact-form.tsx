@@ -15,13 +15,23 @@ export function ContactForm() {
     
     try {
       const form = e.currentTarget;
+      console.log("Submitting form to:", form.action);
+      
+      const formData = new FormData(form);
+      // Log form data being sent
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+      
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: formData,
         headers: {
           'Accept': 'application/json'
         }
       });
+      
+      console.log("Formspree response status:", response.status);
       
       if (response.ok) {
         toast({
@@ -30,6 +40,8 @@ export function ContactForm() {
         });
         form.reset();
       } else {
+        const errorData = await response.json().catch(() => null);
+        console.error("Formspree error response:", errorData);
         throw new Error('Form submission failed');
       }
     } catch (error) {

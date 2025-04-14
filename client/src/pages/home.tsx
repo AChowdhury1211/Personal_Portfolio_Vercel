@@ -102,8 +102,8 @@ export default function Home() {
 
   // Define the background images with absolute URLs
   const backgroundImages = [
-    "/images/bg-image1.jpg",
-    "/images/bg-image2.jpg",
+    "/images/bg-image1.svg",
+    "/images/bg-image2.svg",
   ];
   
   // Check if we need to scroll to contact section after navigation
