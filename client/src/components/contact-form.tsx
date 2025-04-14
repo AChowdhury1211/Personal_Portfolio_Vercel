@@ -37,7 +37,7 @@ export function ContactForm() {
 
   return (
     <div className="contact-section w-full py-24 px-4 relative" style={{ 
-      backgroundImage: `url('/images/contact-bg.svg')`, 
+      backgroundImage: `url('/images/bg-image1.svg')`, 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -88,10 +88,9 @@ export function ContactForm() {
                 name="service" 
                 id="service" 
                 required
-                defaultValue=""
                 className="w-full bg-white/20 border-0 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
               >
-                <option value="" disabled className="text-gray-400">Select a service tier</option>
+                <option value="" disabled selected className="text-gray-400">Select a service tier</option>
                 <option value="initial">S → Initial Consultation</option>
                 <option value="foundation">A → Foundation Package</option>
                 <option value="implementation">B → Implementation Package</option>
