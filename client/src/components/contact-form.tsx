@@ -67,7 +67,7 @@ export function ContactForm() {
                   id="username" 
                   placeholder="Name" 
                   required
-                  className="bg-white/20 border-0 text-white placeholder:text-gray-300 h-12" 
+                  className="bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12" 
                 />
               </div>
               
@@ -78,7 +78,7 @@ export function ContactForm() {
                   id="email" 
                   placeholder="Email" 
                   required
-                  className="bg-white/20 border-0 text-white placeholder:text-gray-300 h-12" 
+                  className="bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12" 
                 />
               </div>
             </div>
@@ -88,14 +88,14 @@ export function ContactForm() {
                 name="service" 
                 id="service" 
                 required
-                className="w-full bg-white/20 border-0 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
+                className="w-full bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
                 defaultValue=""
               >
-                <option value="" disabled className="bg-gray-600/90 text-gray-200">Select a service tier</option>
-                <option value="initial" className="bg-gray-600/90 text-white">S → Initial Consultation</option>
-                <option value="foundation" className="bg-gray-600/90 text-white">A → Foundation Package</option>
-                <option value="implementation" className="bg-gray-600/90 text-white">B → Implementation Package</option>
-                <option value="enterprise" className="bg-gray-600/90 text-white">C → Enterprise Solution</option>
+                <option value="" disabled className="bg-black/90 text-gray-200">Select a service tier</option>
+                <option value="initial" className="bg-black/90 text-white">S → Initial Consultation</option>
+                <option value="foundation" className="bg-black/90 text-white">A → Foundation Package</option>
+                <option value="implementation" className="bg-black/90 text-white">B → Implementation Package</option>
+                <option value="enterprise" className="bg-black/90 text-white">C → Enterprise Solution</option>
               </select>
             </div>
 
@@ -105,7 +105,7 @@ export function ContactForm() {
                 id="message" 
                 rows={8} 
                 placeholder="Message"
-                className="min-h-[160px] bg-white/20 border-0 text-white placeholder:text-gray-300"
+                className="min-h-[160px] bg-black/50 border border-white/20 text-white placeholder:text-gray-300"
                 required
               />
             </div>
