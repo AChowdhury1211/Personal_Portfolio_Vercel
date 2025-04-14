@@ -179,7 +179,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="text-left mb-2" style={{ textAlign: 'left' }}>
+            <p className="mb-6" style={{ textAlign: 'center' }}>
               I'm also the creator of AIChronicles, a blog that focuses on sharing insights from cutting-edge research papers on various AI-related topics and the application of MLOps to optimize development and deployment.
             </p>
 

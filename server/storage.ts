@@ -103,10 +103,15 @@ export class MemStorage implements IStorage {
     
     try {
       // Create email content
+      // Use your verified sender identity from SendGrid here
+      // Both from and to addresses need to be addresses you've verified with SendGrid
       const emailContent = {
-        from: 'canwesha91@gmail.com', // sender address - use your verified SendGrid sender
-        to: 'achowdhury1211@gmail.com', // receiver address
-        replyTo: contact.email, // Set reply-to as the contact's email
+        from: {
+          email: process.env.SENDER_EMAIL || 'portfolio@example.com',
+          name: 'Portfolio Contact Form'
+        },
+        to: process.env.RECIPIENT_EMAIL || 'achowdhury1211@gmail.com',
+        replyTo: contact.email,
         subject: `New Contact Form Submission: ${contact.serviceTier} Inquiry`,
         text: `
 Name: ${contact.name}
@@ -124,6 +129,11 @@ ${contact.message}
 <p>${contact.message.replace(/\n/g, '<br>')}</p>
         `,
       };
+      
+      // Log email details for debugging
+      console.log('Sending email with the following configuration:');
+      console.log(`From: ${JSON.stringify(emailContent.from)}`);
+      console.log(`To: ${emailContent.to}`);
       
       // Use SendGrid if API key is available, otherwise fall back to Ethereal
       if (useSendGrid) {
