@@ -12,7 +12,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import {
@@ -80,90 +79,120 @@ export function ContactForm() {
   });
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(
-        (data) => {
-          console.log("Form submitted with valid data:", data);
-          mutation.mutate(data);
-        }, 
-        (errors) => {
-          console.error("Form submission failed with validation errors:", errors);
-        }
-      )} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+    <div className="contact-section w-full bg-gradient-to-br from-slate-900 to-slate-800 py-16 px-4 relative" style={{ 
+      backgroundImage: `url('/images/bg-image1.svg')`, 
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      
+      <div className="max-w-xl mx-auto relative z-10">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">SEND ME EMAIL</h1>
+        </div>
         
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input type="email" placeholder="your@email.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="serviceTier"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Service Tier</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a service tier" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="initial">S → Initial Consultation</SelectItem>
-                  <SelectItem value="foundation">A → Foundation Package</SelectItem>
-                  <SelectItem value="implementation">B → Implementation Package</SelectItem>
-                  <SelectItem value="enterprise">C → Enterprise Solution</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea 
-                  placeholder="Tell me about your project..."
-                  className="min-h-[120px]"
-                  {...field}
+        <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(
+              (data) => {
+                console.log("Form submitted with valid data:", data);
+                mutation.mutate(data);
+              }, 
+              (errors) => {
+                console.error("Form submission failed with validation errors:", errors);
+              }
+            )} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input 
+                          placeholder="Name" 
+                          className="bg-white/20 border-0 text-white placeholder:text-gray-300" 
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage className="text-red-300" />
+                    </FormItem>
+                  )}
                 />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input 
+                          type="email" 
+                          placeholder="Email" 
+                          className="bg-white/20 border-0 text-white placeholder:text-gray-300" 
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage className="text-red-300" />
+                    </FormItem>
+                  )}
+                />
+              </div>
 
-        <Button type="submit" className="w-full" disabled={mutation.isPending}>
-          Send Message
-        </Button>
-      </form>
-    </Form>
+              <FormField
+                control={form.control}
+                name="serviceTier"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="bg-white/20 border-0 text-white">
+                          <SelectValue placeholder="Select a service tier" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="initial">S → Initial Consultation</SelectItem>
+                        <SelectItem value="foundation">A → Foundation Package</SelectItem>
+                        <SelectItem value="implementation">B → Implementation Package</SelectItem>
+                        <SelectItem value="enterprise">C → Enterprise Solution</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage className="text-red-300" />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Message"
+                        className="min-h-[120px] bg-white/20 border-0 text-white placeholder:text-gray-300"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red-300" />
+                  </FormItem>
+                )}
+              />
+
+              <div className="text-center">
+                <Button 
+                  type="submit" 
+                  className="w-full md:w-auto px-8 py-2 bg-white text-slate-900 hover:bg-gray-100 transition-all duration-300 font-medium" 
+                  disabled={mutation.isPending}
+                >
+                  {mutation.isPending ? "Sending..." : "Submit"}
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </div>
+      </div>
+    </div>
   );
 }

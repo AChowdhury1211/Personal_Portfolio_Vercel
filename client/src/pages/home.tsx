@@ -303,24 +303,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ready to Work Together Section */}
-      <section className="container mx-auto px-4 bg-primary/5 py-12 rounded-lg mt-16">
-        <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-4">Ready to Work Together?</h2>
-          <p className="text-xl text-muted-foreground">
-            Let's develop innovative AI solutions that drive your business
-            forward
-          </p>
-        </div>
-        <Card id="contact">
-          <CardHeader>
-            <CardTitle>Get in Touch</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ContactForm />
-          </CardContent>
-        </Card>
-      </section>
+      {/* Contact Form Section */}
+      <div id="contact">
+        <ContactForm />
+      </div>
 
 
     </div>
