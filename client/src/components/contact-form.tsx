@@ -52,7 +52,7 @@ export function ContactForm() {
           </p>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm p-10 rounded-lg shadow-2xl">
+        <div className="bg-black/30 backdrop-blur-sm p-10 rounded-lg shadow-2xl border border-white/10">
           <form 
             method="POST" 
             action="https://formspree.io/f/mdknkgrn" 
