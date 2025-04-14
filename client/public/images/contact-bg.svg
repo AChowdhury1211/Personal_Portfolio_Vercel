@@ -1,0 +1,56 @@
+<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#3182ce" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1a365d" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" />
+  
+  <!-- Glowing effect -->
+  <circle cx="700" cy="400" r="400" fill="url(#glow)" opacity="0.4" />
+  
+  <!-- Particles -->
+  <g opacity="0.7">
+    <circle cx="200" cy="150" r="3" fill="#e2e8f0" />
+    <circle cx="400" cy="250" r="2" fill="#e2e8f0" />
+    <circle cx="600" cy="100" r="2.5" fill="#e2e8f0" />
+    <circle cx="800" cy="200" r="3" fill="#e2e8f0" />
+    <circle cx="1000" cy="150" r="2" fill="#e2e8f0" />
+    <circle cx="1200" cy="250" r="2.5" fill="#e2e8f0" />
+    <circle cx="300" cy="350" r="2" fill="#e2e8f0" />
+    <circle cx="500" cy="450" r="3" fill="#e2e8f0" />
+    <circle cx="700" cy="350" r="2.5" fill="#e2e8f0" />
+    <circle cx="900" cy="450" r="2" fill="#e2e8f0" />
+    <circle cx="1100" cy="350" r="3" fill="#e2e8f0" />
+    <circle cx="250" cy="550" r="2.5" fill="#e2e8f0" />
+    <circle cx="450" cy="650" r="2" fill="#e2e8f0" />
+    <circle cx="650" cy="550" r="3" fill="#e2e8f0" />
+    <circle cx="850" cy="650" r="2.5" fill="#e2e8f0" />
+    <circle cx="1050" cy="550" r="2" fill="#e2e8f0" />
+    <circle cx="1250" cy="650" r="3" fill="#e2e8f0" />
+  </g>
+  
+  <!-- Grid lines -->
+  <g opacity="0.1" stroke="#e2e8f0" stroke-width="0.5">
+    <line x1="0" y1="200" x2="1400" y2="200" />
+    <line x1="0" y1="400" x2="1400" y2="400" />
+    <line x1="0" y1="600" x2="1400" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="800" />
+    <line x1="400" y1="0" x2="400" y2="800" />
+    <line x1="600" y1="0" x2="600" y2="800" />
+    <line x1="800" y1="0" x2="800" y2="800" />
+    <line x1="1000" y1="0" x2="1000" y2="800" />
+    <line x1="1200" y1="0" x2="1200" y2="800" />
+  </g>
+  
+  <!-- Abstract shapes -->
+  <path d="M0,800 L1400,800 L1400,650 C1200,700 1000,680 800,690 C600,700 400,750 200,720 L0,700 Z" fill="#3182ce" opacity="0.08" />
+  <path d="M0,800 L1400,800 L1400,700 C1150,750 950,720 700,730 C450,740 200,780 0,760 Z" fill="#3182ce" opacity="0.04" />
+</svg>
