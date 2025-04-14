@@ -2,11 +2,36 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formspreeId, setFormspreeId] = useState<string | null>(null);
+  
+  useEffect(() => {
+    // Get the Formspree form ID from environment variable
+    const getFormspreeId = async () => {
+      try {
+        const response = await fetch('/api/get-formspree-id');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.formId) {
+            setFormspreeId(data.formId);
+            console.log("Successfully loaded Formspree ID");
+          } else {
+            console.error("No Formspree form ID found in response");
+          }
+        } else {
+          console.error("Failed to load Formspree ID");
+        }
+      } catch (error) {
+        console.error("Error fetching Formspree ID:", error);
+      }
+    };
+    
+    getFormspreeId();
+  }, []);
   
   // Create a form for Formspree
   const handleFormspreeSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,9 +44,10 @@ export function ContactForm() {
       
       const formData = new FormData(form);
       // Log form data being sent
-      for (let [key, value] of formData.entries()) {
+      // Convert to array to avoid TypeScript iterator issues
+      Array.from(formData.entries()).forEach(([key, value]) => {
         console.log(`${key}: ${value}`);
-      }
+      });
       
       const response = await fetch(form.action, {
         method: 'POST',
@@ -76,7 +102,7 @@ export function ContactForm() {
         <div className="bg-black/30 backdrop-blur-sm p-10 rounded-lg shadow-2xl border border-white/10">
           <form 
             method="POST" 
-            action="https://formspree.io/f/mdknkgrn" 
+            action={formspreeId ? `https://formspree.io/f/${formspreeId}` : "https://formspree.io/f/mdknkgrn"}
             className="space-y-8"
             onSubmit={handleFormspreeSubmit}
           >
@@ -113,10 +139,10 @@ export function ContactForm() {
                 defaultValue=""
               >
                 <option value="" disabled className="bg-black/90 text-gray-200">Select a service tier</option>
-                <option value="Initial Consultation" className="bg-black/90 text-white">S → Initial Consultation</option>
-                <option value="Foundation Package" className="bg-black/90 text-white">A → Foundation Package</option>
-                <option value="Implementation Package" className="bg-black/90 text-white">B → Implementation Package</option>
-                <option value="Enterprise Solution" className="bg-black/90 text-white">C → Enterprise Solution</option>
+                <option value="S → Initial Consultation" className="bg-black/90 text-white">S → Initial Consultation</option>
+                <option value="A → Foundation Package" className="bg-black/90 text-white">A → Foundation Package</option>
+                <option value="B → Implementation Package" className="bg-black/90 text-white">B → Implementation Package</option>
+                <option value="C → Enterprise Solution" className="bg-black/90 text-white">C → Enterprise Solution</option>
               </select>
             </div>
 
