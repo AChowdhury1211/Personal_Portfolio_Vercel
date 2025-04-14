@@ -1,34 +1,17 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
-import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { apiRequest } from "@/lib/queryClient";
+import { useState } from "react";
 
 export function ContactForm() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Create a form for Formspree
   const handleFormspreeSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     try {
       const form = e.currentTarget;
@@ -55,6 +38,9 @@ export function ContactForm() {
         description: "Failed to send message. Please try again.",
         variant: "destructive"
       });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -86,8 +72,8 @@ export function ContactForm() {
               <div className="form-group">
                 <Input 
                   type="text" 
-                  name="username" 
-                  id="username" 
+                  name="name" 
+                  id="name" 
                   placeholder="Name" 
                   required
                   className="bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12" 
@@ -108,17 +94,17 @@ export function ContactForm() {
 
             <div className="form-group">
               <select 
-                name="service" 
-                id="service" 
+                name="serviceTier" 
+                id="serviceTier" 
                 required
                 className="w-full bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
                 defaultValue=""
               >
                 <option value="" disabled className="bg-black/90 text-gray-200">Select a service tier</option>
-                <option value="initial" className="bg-black/90 text-white">S → Initial Consultation</option>
-                <option value="foundation" className="bg-black/90 text-white">A → Foundation Package</option>
-                <option value="implementation" className="bg-black/90 text-white">B → Implementation Package</option>
-                <option value="enterprise" className="bg-black/90 text-white">C → Enterprise Solution</option>
+                <option value="Initial Consultation" className="bg-black/90 text-white">S → Initial Consultation</option>
+                <option value="Foundation Package" className="bg-black/90 text-white">A → Foundation Package</option>
+                <option value="Implementation Package" className="bg-black/90 text-white">B → Implementation Package</option>
+                <option value="Enterprise Solution" className="bg-black/90 text-white">C → Enterprise Solution</option>
               </select>
             </div>
 
@@ -136,9 +122,10 @@ export function ContactForm() {
             <div className="text-center">
               <Button 
                 type="submit" 
-                className="w-full md:w-auto px-10 py-6 bg-white text-slate-900 hover:bg-gray-100 transition-all duration-300 font-medium text-lg" 
+                className="w-full md:w-auto px-10 py-6 bg-white text-slate-900 hover:bg-gray-100 transition-all duration-300 font-medium text-lg"
+                disabled={isSubmitting}
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </Button>
             </div>
           </form>
