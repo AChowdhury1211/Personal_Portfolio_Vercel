@@ -43,13 +43,20 @@ export function ContactForm() {
       console.log("Submitting form to:", form.action);
       
       const formData = new FormData(form);
-      // Log form data being sent
-      // Convert to array to avoid TypeScript iterator issues
+      
+      // Log form data being sent for debugging
       Array.from(formData.entries()).forEach(([key, value]) => {
         console.log(`${key}: ${value}`);
       });
       
-      const response = await fetch(form.action, {
+      // Direct submission to Formspree
+      const formspreeUrl = formspreeId 
+        ? `https://formspree.io/f/${formspreeId}`
+        : form.action;
+        
+      console.log("Sending to Formspree URL:", formspreeUrl);
+      
+      const response = await fetch(formspreeUrl, {
         method: 'POST',
         body: formData,
         headers: {
@@ -58,6 +65,8 @@ export function ContactForm() {
       });
       
       console.log("Formspree response status:", response.status);
+      const responseData = await response.json().catch(() => ({}));
+      console.log("Formspree response data:", responseData);
       
       if (response.ok) {
         toast({
@@ -66,8 +75,7 @@ export function ContactForm() {
         });
         form.reset();
       } else {
-        const errorData = await response.json().catch(() => null);
-        console.error("Formspree error response:", errorData);
+        console.error("Formspree error response:", responseData);
         throw new Error('Form submission failed');
       }
     } catch (error) {
