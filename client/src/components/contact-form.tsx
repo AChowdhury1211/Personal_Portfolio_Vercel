@@ -88,13 +88,15 @@ export function ContactForm() {
                 name="service" 
                 id="service" 
                 required
-                className="w-full bg-white/20 border-0 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
+                className="w-full bg-black/50 border border-white/20 text-white placeholder:text-gray-300 h-12 rounded-md px-3"
+                style={{ color: 'white', backgroundColor: 'rgba(0,0,0,0.5)' }}
+                defaultValue=""
               >
-                <option value="" disabled selected className="text-gray-400">Select a service tier</option>
-                <option value="initial">S → Initial Consultation</option>
-                <option value="foundation">A → Foundation Package</option>
-                <option value="implementation">B → Implementation Package</option>
-                <option value="enterprise">C → Enterprise Solution</option>
+                <option value="" disabled className="bg-slate-800 text-gray-200">Select a service tier</option>
+                <option value="initial" className="bg-slate-800 text-white">S → Initial Consultation</option>
+                <option value="foundation" className="bg-slate-800 text-white">A → Foundation Package</option>
+                <option value="implementation" className="bg-slate-800 text-white">B → Implementation Package</option>
+                <option value="enterprise" className="bg-slate-800 text-white">C → Enterprise Solution</option>
               </select>
             </div>
 
