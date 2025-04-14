@@ -28,8 +28,8 @@ const researchAreas = [
 const services = [
   {
     title: "S → Initial Consultation",
-    price: "$500",
     description: "1-hour strategy call",
+    price: "$70",
     features: [
       "Expert evaluation of your AI implementation needs",
       "High-level recommendations for your specific challenges",
@@ -39,8 +39,8 @@ const services = [
   },
   {
     title: "A → Foundation Package",
-    price: "$9,500 per month",
-    description: "20 hours of dedicated research and unlimited email support",
+    description: "40 hours of dedicated research and unlimited email support",
+    price: "$2,400/month",
     features: [
       "Expert evaluation of AI research papers and technologies",
       "Implementation recommendations for your specific use case",
@@ -50,8 +50,8 @@ const services = [
   },
   {
     title: "B → Implementation Package",
-    price: "Starts at $45k for the entire engagement",
     description: "Complete proof-of-concept development",
+    price: "Starts at $10k",
     features: [
       "Complete proof-of-concept development based on cutting-edge research",
       "Custom model adaptation and fine-tuning for your business needs",
@@ -62,13 +62,13 @@ const services = [
   },
   {
     title: "C → Enterprise Solution",
-    price: "Starts at $110k for the entire engagement",
     description: "End-to-end custom AI solution",
+    price: "Starts at $30k",
     features: [
       "End-to-end custom AI solution from research to production",
       "Advanced model architecture design and optimization",
       "Full integration with existing systems and workflows",
-      "Comprehensive training for your technical team",
+      "Comprehensive AI mentorship for your technical team",
       "6 months of ongoing optimization and support",
       "Scalability planning and future technology roadmap",
     ],
