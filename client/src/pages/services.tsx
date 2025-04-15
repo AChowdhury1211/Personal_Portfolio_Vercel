@@ -4,9 +4,9 @@ import { useLocation } from "wouter";
 
 const researchAreas = [
   {
-    title: "Multimodal Large Language Models",
-    description: "Research on models that can understand and generate content across text, images, audio, and video for more natural human-computer interactions.",
-    image: "/images/research-multimodal.svg"
+    title: "VGGT: Visual Geometry Grounded Transformer",
+    description: "VGGT is a feed-forward neural network that efficiently infers all key 3D scene attributes in under one second, outperforming specialized alternatives while achieving state-of-the-art results across multiple 3D computer vision tasks.",
+    image: "/images/vggt.png"
   },
   {
     title: "Reinforcement Learning from Human Feedback",
