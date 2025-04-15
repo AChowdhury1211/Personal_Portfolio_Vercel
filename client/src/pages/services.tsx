@@ -6,22 +6,26 @@ const researchAreas = [
   {
     title: "VGGT: Visual Geometry Grounded Transformer",
     description: "VGGT is a feed-forward neural network that efficiently infers all key 3D scene attributes in under one second, outperforming specialized alternatives while achieving state-of-the-art results across multiple 3D computer vision tasks.",
-    image: "/images/vggt.png"
+    image: "/images/vggt.png",
+    arxivLink: "https://arxiv.org/abs/2401.05056"
   },
   {
     title: "Reinforcement Learning from Human Feedback",
     description: "Advanced techniques to improve AI alignment with human preferences and values through interactive feedback mechanisms.",
-    image: "/images/research-rlhf.svg"
+    image: "/images/research-rlhf.svg",
+    arxivLink: "https://arxiv.org/abs/2309.00267"
   },
   {
     title: "Efficient AI Deployment",
     description: "Methods for optimizing model serving, reducing computational requirements, and enabling edge deployment of complex AI models.",
-    image: "/images/research-efficiency.svg"
+    image: "/images/research-efficiency.svg",
+    arxivLink: "https://arxiv.org/abs/2305.14325"
   },
   {
     title: "AI for Scientific Discovery",
     description: "Using AI systems to accelerate discoveries in drug development, materials science, and fundamental physics.",
-    image: "/images/research-science.svg"
+    image: "/images/research-science.svg",
+    arxivLink: "https://arxiv.org/abs/2303.15748"
   }
 ];
 
@@ -102,7 +106,11 @@ export default function Services() {
         <h2 className="text-4xl font-bold mb-8 text-center">Trending Research Papers</h2>
         <div className="grid md:grid-cols-2 gap-12">
           {researchAreas.map((area) => (
-            <Card key={area.title} className="flex flex-col md:flex-row overflow-hidden">
+            <Card 
+              key={area.title} 
+              className="flex flex-col md:flex-row overflow-hidden cursor-pointer transition-all hover:shadow-lg"
+              onClick={() => window.open(area.arxivLink, '_blank')}
+            >
               <div className="w-full md:w-1/3 flex items-center justify-center p-6 bg-primary/5">
                 <img 
                   src={area.image} 
@@ -115,7 +123,8 @@ export default function Services() {
               </div>
               <div className="w-full md:w-2/3 p-6">
                 <h3 className="text-xl font-semibold mb-2">{area.title}</h3>
-                <p className="text-muted-foreground">{area.description}</p>
+                <p className="text-muted-foreground mb-2">{area.description}</p>
+                <p className="text-sm text-primary underline">View on arXiv</p>
               </div>
             </Card>
           ))}
