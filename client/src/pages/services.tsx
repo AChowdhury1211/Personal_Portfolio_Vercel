@@ -7,25 +7,25 @@ const researchAreas = [
     title: "VGGT: Visual Geometry Grounded Transformer",
     description: "VGGT is a feed-forward neural network that efficiently infers all key 3D scene attributes in under one second, outperforming specialized alternatives while achieving state-of-the-art results across multiple 3D computer vision tasks.",
     image: "/images/vggt.png",
-    arxivLink: "https://arxiv.org/abs/2401.05056"
+    arxivLink: "https://arxiv.org/abs/2503.11651v1"
   },
   {
-    title: "Reinforcement Learning from Human Feedback",
-    description: "Advanced techniques to improve AI alignment with human preferences and values through interactive feedback mechanisms.",
-    image: "/images/research-rlhf.svg",
-    arxivLink: "https://arxiv.org/abs/2309.00267"
+    title: "HART: EFFICIENT VISUAL GENERATION WITH HYBRID AUTOREGRESSIVE TRANSFORMER",
+    description: "HART is a high-resolution autoregressive image generation model that combines discrete and continuous tokenization to significantly improve image quality and efficiency, outperforming diffusion models in both performance and computational cost.",
+    image: "/images/hart.png",
+    arxivLink: "https://arxiv.org/abs/2410.10812"
   },
   {
-    title: "Efficient AI Deployment",
-    description: "Methods for optimizing model serving, reducing computational requirements, and enabling edge deployment of complex AI models.",
-    image: "/images/research-efficiency.svg",
-    arxivLink: "https://arxiv.org/abs/2305.14325"
+    title: "Cosmos-Transfer1: Conditional World Generation with Adaptive Multimodal Control",
+    description: "Cosmos-Transfer1 is a real-time world generation model that uses adaptive spatial conditioning from multiple input modalities to enable precise simulation control for applications like Sim2Real in robotics and autonomous systems.",
+    image: "/images/cosmos.png",
+    arxivLink: "https://arxiv.org/abs/2503.14492"
   },
   {
-    title: "AI for Scientific Discovery",
-    description: "Using AI systems to accelerate discoveries in drug development, materials science, and fundamental physics.",
-    image: "/images/research-science.svg",
-    arxivLink: "https://arxiv.org/abs/2303.15748"
+    title: "Multimodal-Conditioned Latent Diffusion Models for Fashion Image Editing",
+    description: "This paper presents a novel method for human-centric fashion image editing using multimodal prompts—such as text, poses, sketches, and textures—by extending latent diffusion models with modified denoising networks and enriched datasets, achieving realistic and coherent visual results.",
+    image: "/images/edit.png",
+    arxivLink: "https://arxiv.org/abs/2403.14828"
   }
 ];
 
