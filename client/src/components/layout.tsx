@@ -2,10 +2,12 @@ import { ThemeToggle } from "./theme-toggle";
 import { Link } from "wouter";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
+import CanvasCursor from "./canvas-cursor";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <CanvasCursor />
       <header className="border-b">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-center gap-6">
